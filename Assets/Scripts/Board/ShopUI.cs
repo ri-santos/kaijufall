@@ -5,18 +5,30 @@ using UnityEngine.UI;
 public class ShopUI : MonoBehaviour
 {
     public PlayerManager playerManager;
-    [SerializeField] private TextMeshPro moneyText;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerManager = FindAnyObjectByType<PlayerManager>();
+        playerManager = PlayerManager.instance;
+        playerManager.OnMoneyUpdated += UpdateMoney;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnCardPressed(CardUI card)
+    {
+        if (playerManager.canBuy(card.cost))
+        {
+            playerManager.Buy(card.cost);
+            Debug.Log("Card purchased: " + card.cardData.name); 
+        }
+        else
+        {
+            Debug.Log("Not enough money to buy this card.");
+        }
     }
 
     private void UpdateMoney()

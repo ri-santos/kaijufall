@@ -21,6 +21,15 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        playerManager = PlayerManager.instance;
+        if (playerManager == null)
+        {
+            Debug.LogError("PlayerManager instance not found.");
+        }
+    }
+
     public Vector2 GetMoveDir()
     {
         return moveDir;

@@ -4,6 +4,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
 
+    public PlayerManager playerManager;
+
     protected Vector2 direction;
     protected float lookAngle;
     public float destroyAfterSeconds;
@@ -14,6 +16,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     void Awake()
     {
+        playerManager = PlayerManager.instance;
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
@@ -41,6 +44,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
             enemyStats.TakeDamage(currentDamage);
+            playerManager.AddMoney(enemyStats.reward);
             Destroy(gameObject);
         }
     }

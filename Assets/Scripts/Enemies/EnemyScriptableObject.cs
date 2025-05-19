@@ -31,4 +31,8 @@ public class EnemyScriptableObject : ScriptableObject
     private float attackRange;
     public float AttackRange { get => attackRange; private set => attackRange = value; }
 
+    [SerializeField]
+    private float reward;
+    public float Reward { get => reward; private set => reward = value; }
+
 }

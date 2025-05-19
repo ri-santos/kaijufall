@@ -8,12 +8,14 @@ public class EnemyStats : MonoBehaviour
     private float currentSpeed;
     private float currentHealth;
     private float currentDamage;
+    public float reward;
 
     private void Awake()
     {
         currentSpeed = enemyData.Speed;
         currentHealth = enemyData.Health;
         currentDamage = enemyData.Damage;
+        reward = enemyData.Reward;
     }
 
     public void TakeDamage(float damage)

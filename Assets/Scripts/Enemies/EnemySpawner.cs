@@ -4,19 +4,27 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
 
-    [SerializeField] float timeBetweenSpawns = 2f;
+    [SerializeField] float timeBetweenSpawns;
+
+    float timeSinceLastSpawn;
+
+    private void Start()
+    {
+        timeSinceLastSpawn = 0f; // Initialize the spawn timer
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timeBetweenSpawns > 0)
+        if (timeSinceLastSpawn < timeBetweenSpawns)
         {
-            timeBetweenSpawns -= Time.deltaTime;
+            timeSinceLastSpawn += Time.deltaTime;
         }
         else
         {
+            Debug.Log("Spawning enemy");
             SpawnEnemy();
-            timeBetweenSpawns = 2f;
+            timeSinceLastSpawn = 0f; // Reset the spawn timer
         }
     }
     void SpawnEnemy()
