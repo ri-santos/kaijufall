@@ -134,7 +134,7 @@ public class MapController : MonoBehaviour
 
             foreach (GameObject chunk in spawnedChunks)
             {
-                opDist = Vector3.Distance(player.transform.position, chunk.transform.position);
+                opDist = Vector3.Distance(pm.transform.position, chunk.transform.position);
                 if (opDist > maxOpDist)
                 {
                     chunk.SetActive(false);
