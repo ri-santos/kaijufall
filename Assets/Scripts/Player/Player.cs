@@ -30,10 +30,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public Vector2 GetMoveDir()
-    {
-        return moveDir;
-    }
 
     private void FixedUpdate()
     {
