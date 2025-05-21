@@ -7,6 +7,7 @@ public class Tile : MonoBehaviour
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight;
+    bool _isOccupied = false;
 
     public void Init(bool isOffset)
     {
@@ -21,5 +22,15 @@ public class Tile : MonoBehaviour
     void OnMouseExit()
     {
         _highlight.SetActive(false);
+    }
+
+    public void setOccupied(bool occupied)
+    {
+        _isOccupied = occupied;
+    }
+
+    public bool isOccupied()
+    {
+        return _isOccupied;
     }
 }
