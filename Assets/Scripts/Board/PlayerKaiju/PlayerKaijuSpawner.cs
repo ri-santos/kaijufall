@@ -1,11 +1,31 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class PlayerKaijuSpawner : MonoBehaviour
 {
     GameObject kaijuPrefab;
+    ShopUI shopUI;
     public System.Action OnKaijuSpawned;
+    Tile selectedTile;
+
+    List<GameObject> kaijus;
+
+    private void Start()
+    {
+        kaijus = new List<GameObject>();
+        shopUI = FindFirstObjectByType<ShopUI>();
+        if (shopUI == null)
+        {
+            Debug.LogError("ShopUI not found in the scene.");
+        }
+        else
+        {
+            shopUI.AcceptPurchase += SpawnKaiju;
+        }
+    }
 
     public void setKaiju(GameObject kaijuPrefab)
     {
@@ -20,15 +40,18 @@ public class PlayerKaijuSpawner : MonoBehaviour
             Tile t = GetTileUnder();
             if (t != null && !t.isOccupied())
             {
-                Debug.Log("Mouse button down");
-                
-                Debug.Log("Spawning kaiju");
-
-                Instantiate(kaijuPrefab, t.transform.position, Quaternion.identity);
-                t.setOccupied(true);
+                selectedTile = t;
                 OnKaijuSpawned?.Invoke();
             }
         }
+    }
+
+    private void SpawnKaiju()
+    {
+        selectedTile.setOccupied(true);
+        kaijuPrefab.GetComponent<PlayerKaijuMovement>().enabled = false;
+        GameObject newKaiju = Instantiate(kaijuPrefab, selectedTile.transform.position, Quaternion.identity);
+        kaijus.Add(newKaiju);
     }
 
     private Tile GetTileUnder()
@@ -44,5 +67,13 @@ public class PlayerKaijuSpawner : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void StartFight()
+    {
+        foreach (var kaiju in kaijus)
+        {
+            kaiju.GetComponent<PlayerKaijuMovement>().enabled = true;
+        }
     }
 }
