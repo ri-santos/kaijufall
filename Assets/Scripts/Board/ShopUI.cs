@@ -59,6 +59,7 @@ public class ShopUI : MonoBehaviour
         Debug.Log("Card deselected: " + card.cardData.name);
         spawner.setKaiju(null);
         spawner.enabled = false;
+        selectedCard = null;
     }
 
     private void PurchaseKaiju()
