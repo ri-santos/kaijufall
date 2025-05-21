@@ -21,7 +21,7 @@ public class ShopUI : MonoBehaviour
     {
         playerManager = PlayerManager.instance;
         playerManager.OnMoneyUpdated += UpdateMoney;
-        moneyText.text = playerManager.Money.ToString();
+        moneyText.text = playerManager.GetCurrentSouls().ToString();
         spawner = GetComponent<PlayerKaijuSpawner>();
         spawner.OnKaijuSpawned += PurchaseKaiju;
         CreateCard();
