@@ -13,6 +13,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
+    protected float currentPierce;
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
     }
 
     protected virtual void Start()
@@ -45,6 +47,16 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
             enemyStats.TakeDamage(currentDamage);
             playerManager.AddMoney(enemyStats.reward);
+            //Destroy(gameObject);
+            ReducePierce();
+        }
+    }
+
+    void ReducePierce()
+    {
+        currentPierce--;
+        if(currentPierce == 0)
+        {
             Destroy(gameObject);
         }
     }

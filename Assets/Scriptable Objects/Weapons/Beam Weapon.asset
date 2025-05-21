@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Beam Weapon
   m_EditorClassIdentifier: 
   prefab: {fileID: 8853908761941188599, guid: d3b765af254026b46b775e64c6e2a874, type: 3}
-  damage: 2
+  damage: 5
   speed: 10
-  cooldownDuration: 1
+  cooldownDuration: 2
+  pierce: 1

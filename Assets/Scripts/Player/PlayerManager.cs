@@ -1,34 +1,43 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField]
-    private float dmgMult;
-    public float DmgMult
-    { get => dmgMult; private set => dmgMult = value; }
-
-    [SerializeField]
-    private float health;
-    public float Health
-    { get => health; private set => health = value; }
-
-    [SerializeField]
-    private float defense;
-    public float Defense
-    { get => defense; private set => defense = value; }
-
-    [SerializeField]
-    private float speed;
-    public float Speed
-    { get => speed; private set => speed = value; }
-
-    [SerializeField]
-    private float money;
-    public float Money
-    { get => money; private set => money = value; }
+    public CharacterScriptableObject characterData;
 
     public System.Action OnMoneyUpdated;
+    
+    //current Stats
+    float currentHealth;
+    float currentRecovery;
+    float currentMoveSpeed;
+    float currentMight;
+    float currentProjectileSpeed;
+    float currentSouls;
+
+    //Exp and lvl
+    [Header("Exp/Lvl")]
+    public int experience = 0;
+    public int level = 1;
+    public int experienceCap;
+
+    //Class for defining a level range and cap
+    [System.Serializable]
+    public class LevelRange
+    {
+        public int startLevel;
+        public int endLevel;
+        public int experienceCapIncrease;
+    }
+
+    //I-Frames system
+    [Header("I-Frames")]
+    public float invincibilityDuration;
+    float invincibilityTimer;
+    bool isInvincible;
+
+    public List<LevelRange> levelRanges;
 
     #region Singleton
     public static PlayerManager instance;
@@ -41,26 +50,88 @@ public class PlayerManager : MonoBehaviour
             Destroy(instance);
             return;
         }
+        currentHealth = characterData.MaxHealth;
+        currentRecovery = characterData.Recovery;
+        currentMoveSpeed = characterData.MoveSpeed;
+        currentMight = characterData.Might;
+        currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentSouls = characterData.Souls;
 
         instance = this;
     }
     #endregion
 
-    void Start()
+    private void Start()
     {
-        money = 100; // Initialize money to 200
+        experienceCap = levelRanges[0].experienceCapIncrease;
+    }
+
+    private void Update()
+    {
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible)
+        {
+            isInvincible = false;
+        }
+    }
+    public void IncreaseExperience(int amount)
+    {
+        experience = amount;
+        LevelUpChecker();
+    }
+
+    void LevelUpChecker()
+    {
+        if (experience >= experienceCap)
+        {
+            level++;
+            experience -= experienceCap;
+
+            int experienceCapIncrease = 0;
+            foreach (LevelRange range in levelRanges)
+            {
+                if(level >= range.startLevel && level <= range.endLevel)
+                {
+                    experienceCapIncrease = range.experienceCapIncrease;
+                    break;
+                }
+            }
+            experienceCap += experienceCapIncrease;
+        }
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        if (!isInvincible)
+        {
+            currentHealth -= dmg;
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+            if (currentHealth <= 0)
+            {
+                Kill();
+            }
+        }
+    }
+
+    public void Kill()
+    {
+        Debug.Log("Player IS DEAD");
     }
 
     public bool canBuy(float cost)
     {
-        return money >= cost;
+        return currentSouls >= cost;
     }
 
     public void Buy(float cost)
     {
         if (canBuy(cost))
         {
-            money -= cost;
+            currentSouls -= cost;
             OnUpdate();
         }
         else
@@ -71,12 +142,17 @@ public class PlayerManager : MonoBehaviour
 
     public void AddMoney(float amount)
     {
-        money += amount;
+        currentSouls += amount;
         OnUpdate();
     }
 
     public void OnUpdate()
     {
         OnMoneyUpdated?.Invoke();
+    }
+
+    public float GetCurrentSouls()
+    {
+        return currentSouls;
     }
 }

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
     private PlayerManager playerManager;
+    public CharacterScriptableObject characterData;
 
     [HideInInspector]
     Vector2 moveDir;
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         moveDir = movement.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector2(moveDir.x * playerManager.Speed, moveDir.y * playerManager.Speed);
+        rb.linearVelocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
     }
 
     private void OnEnable()
