@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebe05eb8171b9f45976484eddc92f76, type: 3}
+  m_Name: Ranged_Kaiju
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  kaijuName: 
+  speed: 0
+  maxHealth: 0
+  damage: 20
+  attackCooldown: 1.5
+  attackRange: 8
+  blockStrength: 0
+  cost: 0
+  attackType: 1
+  attackPrefab: {fileID: 975588017728026953, guid: 48171aaaab96b4e71b7f850fbda0cbd8, type: 3}
+  specialAbilityCooldown: 0
