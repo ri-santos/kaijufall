@@ -21,5 +21,13 @@ public class SwordBehaviour : MeeleeWeaponBehaviour
 
             markedEnemies.Add(collision.gameObject);
         }
+        else if (collision.CompareTag("Prop"))
+        {
+            if (collision.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(collision.gameObject))
+            {
+                breakable.Takedamage(currentDamage);
+                markedEnemies.Add(collision.gameObject);
+            }
+        }
     }
 }

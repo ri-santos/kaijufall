@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -154,5 +155,19 @@ public class PlayerManager : MonoBehaviour
     public float GetCurrentSouls()
     {
         return currentSouls;
+    }
+
+    public void RestoreHealth(int healthVal)
+    {
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += healthVal;
+
+            if(currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+        
     }
 }
