@@ -10,6 +10,7 @@ public class ShopUI : MonoBehaviour
     public PlayerManager playerManager;
     [SerializeField] private TextMeshProUGUI moneyText;
     PlayerKaijuSpawner spawner;
+
     //public PlayerKaijuScriptableObject cardData;
     //public CardUI cardPrefab;
 
@@ -17,13 +18,17 @@ public class ShopUI : MonoBehaviour
 
     private CardUI selectedCard;
 
+    public System.Action AcceptPurchase;
+
     void Start()
     {
         playerManager = PlayerManager.instance;
         playerManager.OnMoneyUpdated += UpdateMoney;
+
         moneyText.text = playerManager.Money.ToString();
         spawner = GetComponent<PlayerKaijuSpawner>();
         spawner.OnKaijuSpawned += PurchaseKaiju;
+
         CreateCard();
         spawner = GetComponent<PlayerKaijuSpawner>();
         spawner.enabled = false;
@@ -70,6 +75,8 @@ public class ShopUI : MonoBehaviour
             if (playerManager.canBuy(selectedCard.cost))
             {
                 playerManager.Buy(selectedCard.cost);
+                Debug.Log("Kaiju purchased: " + selectedCard != null);
+                AcceptPurchase?.Invoke();
             }
             else
             {
