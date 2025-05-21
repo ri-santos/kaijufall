@@ -5,16 +5,7 @@ using UnityEngine.EventSystems;
 public class PlayerKaijuSpawner : MonoBehaviour
 {
     GameObject kaijuPrefab;
-    //InputManager inputManager;
-    //InputAction spawnKaijuAction;
-
-    //private void Awake()
-    //{
-    //    Debug.Log("Awake PlayerKaijuSpawner");
-    //    inputManager = new InputManager();
-    //    spawnKaijuAction = inputManager.Player.Spawn;
-    //    spawnKaijuAction.performed += ctx => SpawnKaiju();
-    //}
+    public System.Action OnKaijuSpawned;
 
     public void setKaiju(GameObject kaijuPrefab)
     {
@@ -32,10 +23,10 @@ public class PlayerKaijuSpawner : MonoBehaviour
                 Debug.Log("Mouse button down");
                 
                 Debug.Log("Spawning kaiju");
-                //Vector2 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Instantiate(kaijuPrefab, t.transform.position, Quaternion.identity);
                 t.setOccupied(true);
+                OnKaijuSpawned?.Invoke();
             }
         }
     }
@@ -54,12 +45,4 @@ public class PlayerKaijuSpawner : MonoBehaviour
 
         return null;
     }
-    //private void OnEnable()
-    //{
-    //    spawnKaijuAction.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    spawnKaijuAction.Disable();
-    //}
 }

@@ -51,8 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 5219104010762532642}
   cardName: {fileID: 0}
-  bgNotClicked: {fileID: 167004696, guid: 84873522082196348b931e3f46de09e9, type: 3}
-  bgClicked: {fileID: -565324201, guid: 84873522082196348b931e3f46de09e9, type: 3}
+  bgNotClicked: {fileID: 2631046323181635569, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
+  bgClicked: {fileID: 5136199020975286519, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   cost: 0
   cardData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
 --- !u!1 &5562360509090484620
