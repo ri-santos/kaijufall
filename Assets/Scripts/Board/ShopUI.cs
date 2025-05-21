@@ -21,6 +21,9 @@ public class ShopUI : MonoBehaviour
     {
         playerManager = PlayerManager.instance;
         playerManager.OnMoneyUpdated += UpdateMoney;
+        moneyText.text = playerManager.Money.ToString();
+        spawner = GetComponent<PlayerKaijuSpawner>();
+        spawner.OnKaijuSpawned += PurchaseKaiju;
         CreateCard();
         spawner = GetComponent<PlayerKaijuSpawner>();
         spawner.enabled = false;
@@ -56,6 +59,22 @@ public class ShopUI : MonoBehaviour
         Debug.Log("Card deselected: " + card.cardData.name);
         spawner.setKaiju(null);
         spawner.enabled = false;
+    }
+
+    private void PurchaseKaiju()
+    {
+        if (selectedCard != null)
+        {
+            Debug.Log("Purchasing kaiju: " + selectedCard.cardData.name);
+            if (playerManager.canBuy(selectedCard.cost))
+            {
+                playerManager.Buy(selectedCard.cost);
+            }
+            else
+            {
+                Debug.Log("Not enough money to purchase kaiju.");
+            }
+        }
     }
 
     private void UpdateMoney()

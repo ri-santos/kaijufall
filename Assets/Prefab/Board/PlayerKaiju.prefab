@@ -133,7 +133,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.46875, y: 0.53125}
+  m_Size: {x: 0.62, y: 0.62}
   m_EdgeRadius: 0
 --- !u!114 &2428183729723240127
 MonoBehaviour:
@@ -148,4 +148,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
-  target: {fileID: 4619809580559043962, guid: fb4c3b10583ceef4191a0797d5309b69, type: 3}

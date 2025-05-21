@@ -5,16 +5,7 @@ using UnityEngine.EventSystems;
 public class PlayerKaijuSpawner : MonoBehaviour
 {
     GameObject kaijuPrefab;
-    //InputManager inputManager;
-    //InputAction spawnKaijuAction;
-
-    //private void Awake()
-    //{
-    //    Debug.Log("Awake PlayerKaijuSpawner");
-    //    inputManager = new InputManager();
-    //    spawnKaijuAction = inputManager.Player.Spawn;
-    //    spawnKaijuAction.performed += ctx => SpawnKaiju();
-    //}
+    public System.Action OnKaijuSpawned;
 
     public void setKaiju(GameObject kaijuPrefab)
     {
@@ -26,23 +17,32 @@ public class PlayerKaijuSpawner : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && kaijuPrefab != null)
         {
-            Debug.Log("Mouse button down");
-            if (!EventSystem.current.IsPointerOverGameObject())
+            Tile t = GetTileUnder();
+            if (t != null && !t.isOccupied())
             {
+                Debug.Log("Mouse button down");
+                
                 Debug.Log("Spawning kaiju");
-                Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                Instantiate(kaijuPrefab, worldMousePos, Quaternion.identity);
+                Instantiate(kaijuPrefab, t.transform.position, Quaternion.identity);
+                t.setOccupied(true);
+                OnKaijuSpawned?.Invoke();
             }
         }
     }
 
-    //private void OnEnable()
-    //{
-    //    spawnKaijuAction.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    spawnKaijuAction.Disable();
-    //}
+    private Tile GetTileUnder()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hit.collider != null)
+        {
+            Tile t = hit.collider.GetComponent<Tile>();
+            if (t != null)
+            {
+                return t;
+            }
+        }
+
+        return null;
+    }
 }
