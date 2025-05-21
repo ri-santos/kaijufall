@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293849753
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3616032387214515707, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: eba677621e434cd40bfb2241e02d4bf2, type: 2}
+  playerManager: {fileID: -6049389736101723131, guid: a494e5d74fc7d8948b4e848de912871b, type: 3}
   destroyAfterSeconds: 3
 --- !u!50 &8871447890275823132
 Rigidbody2D:

@@ -11,12 +11,14 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
+    protected int currentPierce;
 
     void Awake()
     {
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

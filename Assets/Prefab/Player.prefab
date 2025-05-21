@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 6803328422612725505}
   - component: {fileID: 5921384396873332946}
   - component: {fileID: -6049389736101723131}
+  - component: {fileID: 4087133304176412365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -223,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab263500fa045f24aa67fd47a2a3e8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: fbe8eba3b36f2c14eafb570df39844c7, type: 2}
 --- !u!114 &-6049389736101723131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,11 +237,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7391fcae84f2cb646a76c223891025f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgMult: 0
-  health: 0
-  defense: 0
-  speed: 10
-  money: 0
+  characterData: {fileID: 11400000, guid: fbe8eba3b36f2c14eafb570df39844c7, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 100
+  invincibilityDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &4087133304176412365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213019838804603061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf7829e0c90a4f47a2dd87169d2f5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9111867057682443367
 GameObject:
   m_ObjectHideFlags: 0
