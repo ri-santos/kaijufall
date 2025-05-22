@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c92bac39a0ea3d418f94d2eda7f39b9, type: 3}
-  m_Name: Beam Weapon
+  m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
+  m_Name: DMG Chip Passive Item
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8853908761941188599, guid: d3b765af254026b46b775e64c6e2a874, type: 3}
-  damage: 5
-  speed: 10
-  cooldownDuration: 2
-  pierce: 2
+  multiplier: 200

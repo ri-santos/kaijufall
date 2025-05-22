@@ -17,7 +17,7 @@ MonoBehaviour:
   maxHealth: 50
   recovery: 1
   moveSpeed: 5
-  might: 0
+  might: 2
   projectileSpeed: 0
   souls: 0
   magnet: 1.6
