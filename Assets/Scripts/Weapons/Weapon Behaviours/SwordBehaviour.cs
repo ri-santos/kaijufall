@@ -17,7 +17,7 @@ public class SwordBehaviour : MeeleeWeaponBehaviour
         if (collision.CompareTag("Enemy") && !markedEnemies.Contains(collision.gameObject))
         {
             EnemyStats enemy = collision.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(GetCurrentDamage());
 
             markedEnemies.Add(collision.gameObject);
         }
@@ -25,7 +25,7 @@ public class SwordBehaviour : MeeleeWeaponBehaviour
         {
             if (collision.gameObject.TryGetComponent(out BreakableProps breakable) && !markedEnemies.Contains(collision.gameObject))
             {
-                breakable.Takedamage(currentDamage);
+                breakable.Takedamage(GetCurrentDamage());
                 markedEnemies.Add(collision.gameObject);
             }
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6654969842183760880}
   - component: {fileID: -5184920448261383338}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: -1293849753
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6257046027232108077, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
+  m_Sprite: {fileID: -1193820911090328509, guid: 710de2b8934043d4aa399b03504f9cae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46875, y: 0.53125}
+    oldSize: {x: 0.53125, y: 0.59375}
     newSize: {x: 0.46875, y: 0.53125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad3bc136702c4c478180bd699d91422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
+  enemyData: {fileID: 11400000, guid: a4a7e041dbbba3b48acf86009a2dcdba, type: 2}
   currentSpeed: 0
   currentHealth: 0
   currentDamage: 0

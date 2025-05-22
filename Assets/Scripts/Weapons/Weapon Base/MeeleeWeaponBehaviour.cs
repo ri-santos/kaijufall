@@ -21,6 +21,10 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
         currentPierce = weaponData.Pierce;
     }
 
+    public float GetCurrentDamage()
+    {
+        return currentDamage *= FindAnyObjectByType<PlayerManager>().currentMight;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -34,14 +38,14 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(currentDamage);
+                enemyStats.TakeDamage(GetCurrentDamage());
             }
         }
         else if (collision.CompareTag("Prop"))
         {
             if (collision.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.Takedamage(currentDamage);
+                breakable.Takedamage(GetCurrentDamage());
             }
         }
     }
