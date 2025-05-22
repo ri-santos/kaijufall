@@ -4,10 +4,14 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-    
-    private float currentSpeed;
-    private float currentHealth;
-    private float currentDamage;
+
+    [HideInInspector]
+    public float currentSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentDamage;
+    [HideInInspector]
     public float reward;
 
     private void Awake()
@@ -29,7 +33,8 @@ public class EnemyStats : MonoBehaviour
     }
 
     public void Kill()
-    {
+    {   
+
         Destroy(gameObject);
     }
 

@@ -12,6 +12,6 @@ public class BeamBehaviour : ProjectileWeaponBehaviour
 
   void Update()
     {
-        rb.linearVelocity = direction * weaponData.Speed;
+        rb.linearVelocity = direction * currentSpeed;
     }
 }

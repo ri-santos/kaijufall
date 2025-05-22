@@ -37,6 +37,13 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
                 enemyStats.TakeDamage(currentDamage);
             }
         }
+        else if (collision.CompareTag("Prop"))
+        {
+            if (collision.gameObject.TryGetComponent(out BreakableProps breakable))
+            {
+                breakable.Takedamage(currentDamage);
+            }
+        }
     }
 
 }
