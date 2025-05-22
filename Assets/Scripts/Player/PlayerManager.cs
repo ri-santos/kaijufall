@@ -8,14 +8,22 @@ public class PlayerManager : MonoBehaviour
     public CharacterScriptableObject characterData;
 
     public System.Action OnMoneyUpdated;
-    
+
     //current Stats
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
-    float currentSouls;
+    //[HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentMight;
+    [HideInInspector]
+    public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentSouls;
+    [HideInInspector]
+    public float currentMagnet;
 
     //Exp and lvl
     [Header("Exp/Lvl")]
@@ -45,6 +53,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        characterData = CharacterSelector.GetData();
+        CharacterSelector.instance.DestroySingleton();
         if (instance != null)
         {
             Debug.LogWarning("Multiple instances of PlayerManager found. Destroying the new one.");
@@ -57,6 +67,7 @@ public class PlayerManager : MonoBehaviour
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentSouls = characterData.Souls;
+        currentMagnet = characterData.Magnet;
 
         instance = this;
     }
@@ -77,6 +88,7 @@ public class PlayerManager : MonoBehaviour
         {
             isInvincible = false;
         }
+        Recover();
     }
     public void IncreaseExperience(int amount)
     {
@@ -169,5 +181,18 @@ public class PlayerManager : MonoBehaviour
             }
         }
         
+    }
+
+    void Recover()
+    {
+        if(currentHealth <= characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+
+            if(currentHealth >= characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
     }
 }

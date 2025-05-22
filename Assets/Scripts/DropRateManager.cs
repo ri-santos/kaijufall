@@ -22,16 +22,17 @@ public class DropRateManager : MonoBehaviour
 
         foreach (Drops rate in drops)
         {
-            if(randomNumber <= rate.dropRate)
+            if (randomNumber <= rate.dropRate)
             {
-               possibleDrops.Add(rate);
+                possibleDrops.Add(rate);
             }
 
-            if(possibleDrops.Count > 0)
+            if (possibleDrops.Count > 0)
             {
                 Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
                 Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
             }
         }
     }
+
 }

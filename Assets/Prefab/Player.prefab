@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2421423066965898610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2693408953639050985}
+  - component: {fileID: 4149909884574517416}
+  - component: {fileID: 2736491975222611699}
+  m_Layer: 0
+  m_Name: Collector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2693408953639050985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421423066965898610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6457473472616212307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4149909884574517416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421423066965898610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf7829e0c90a4f47a2dd87169d2f5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullSpeed: 0
+--- !u!58 &2736491975222611699
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421423066965898610}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &4588767939235975813
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +141,6 @@ GameObject:
   - component: {fileID: 6803328422612725505}
   - component: {fileID: 5921384396873332946}
   - component: {fileID: -6049389736101723131}
-  - component: {fileID: 4087133304176412365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -82,6 +163,7 @@ Transform:
   m_Children:
   - {fileID: 6375438423859495618}
   - {fileID: 8635033423583995131}
+  - {fileID: 2693408953639050985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2595049576481767802
@@ -224,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab263500fa045f24aa67fd47a2a3e8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: fbe8eba3b36f2c14eafb570df39844c7, type: 2}
 --- !u!114 &-6049389736101723131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +318,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7391fcae84f2cb646a76c223891025f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: fbe8eba3b36f2c14eafb570df39844c7, type: 2}
+  characterData: {fileID: 0}
+  currentHealth: 0
+  currentRecovery: 0
+  currentMoveSpeed: 0
+  currentMight: 0
+  currentProjectileSpeed: 0
+  currentSouls: 0
+  currentMagnet: 0
   experience: 0
   level: 1
   experienceCap: 100
@@ -249,18 +337,6 @@ MonoBehaviour:
   - startLevel: 4
     endLevel: 5
     experienceCapIncrease: 200
---- !u!114 &4087133304176412365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8213019838804603061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf7829e0c90a4f47a2dd87169d2f5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9111867057682443367
 GameObject:
   m_ObjectHideFlags: 0

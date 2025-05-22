@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
     private InputAction movement;
 
     Rigidbody2D rb;
-    private PlayerManager playerManager;
-    public CharacterScriptableObject characterData;
+    private PlayerManager player;
 
     [HideInInspector]
     Vector2 moveDir;
@@ -24,8 +23,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        playerManager = PlayerManager.instance;
-        if (playerManager == null)
+        player = PlayerManager.instance;
+        if (player == null)
         {
             Debug.LogError("PlayerManager instance not found.");
         }
@@ -39,7 +38,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         moveDir = movement.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
     }
 
     private void OnEnable()
