@@ -28,11 +28,11 @@ public class GridManager : MonoBehaviour
                 Tile spawnedTile;
                 if (y % 2 == 0)
                 {
-                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - 0.5f - _width/2, y - _height / 1.5f), Quaternion.identity);
+                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - 0.5f - _width / 2, y - _height / 1.5f), Quaternion.identity);
                 }
                 else
                 {
-                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - _width/2, y - _height / 1.5f), Quaternion.identity);
+                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - _width / 2, y - _height / 1.5f), Quaternion.identity);
                 }
 
                 spawnedTile.name = $"Tile {x} {y}";
@@ -52,5 +52,13 @@ public class GridManager : MonoBehaviour
     {
         if (_tiles.TryGetValue(pos, out var tile)) return tile;
         return null;
+    }
+
+    public void StartBattle()
+    {
+        foreach (var tile in _tiles.Values)
+        {
+            tile.gameObject.SetActive(false);
+        }
     }
 }

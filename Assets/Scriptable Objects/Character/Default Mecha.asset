@@ -19,4 +19,4 @@ MonoBehaviour:
   moveSpeed: 5
   might: 0
   projectileSpeed: 0
-  souls: 0
+  souls: 50

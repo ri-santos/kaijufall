@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6798039674365265755}
   - component: {fileID: 1321432538616600534}
   - component: {fileID: 6429165999461928127}
-  - component: {fileID: -5203297506294827417}
-  - component: {fileID: -6654969842183760880}
+  - component: {fileID: 8496707801565645828}
+  - component: {fileID: -8336621628088306932}
   m_Layer: 0
   m_Name: EnemyKaijuBoard
   m_TagString: Enemy
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1293849753
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6257046027232108077, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,9 +134,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.46875, y: 0.53125}
+  m_Size: {x: 0.63, y: 0.68}
   m_EdgeRadius: 0
---- !u!114 &-5203297506294827417
+--- !u!114 &8496707801565645828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,11 +145,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f593223f2e3c1d4e8e16573fe712595, type: 3}
+  m_Script: {fileID: 11500000, guid: eb08c4428cdec95488f84d61c4cebbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
---- !u!114 &-6654969842183760880
+  enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
+--- !u!114 &-8336621628088306932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad3bc136702c4c478180bd699d91422, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ab1cf2f19cb3134599c81669d2f4a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
+  enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
+  reward: 0
+  invincibilityDuration: 0
