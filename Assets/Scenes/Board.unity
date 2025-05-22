@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &136142725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8180419812448980453, guid: 1a15f5b96183a814bbc6e37192ffbaf0, type: 3}
+  m_PrefabInstance: {fileID: 1828317406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6902aae666a638146930d654251f3b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &346972296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2155004969502568384, guid: eaaca81a5a3ec55419bc72a43d4c9de1, type: 3}
@@ -245,6 +256,18 @@ MonoBehaviour:
       - m_Target: {fileID: 871414289}
         m_TargetAssemblyTypeName: BigKaiju, Assembly-CSharp
         m_MethodName: SpawnEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 136142725}
+        m_TargetAssemblyTypeName: GridManager, Assembly-CSharp
+        m_MethodName: StartBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
