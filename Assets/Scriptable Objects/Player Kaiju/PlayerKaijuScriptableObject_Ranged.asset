@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ebe05eb8171b9f45976484eddc92f76, type: 3}
-  m_Name: Ranged_Kaiju
+  m_Name: PlayerKaijuScriptableObject_Ranged
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  kaijuName: 
+  prefab: {fileID: 1482216451476195916, guid: 68791b0bac4412540bd623c7f6dd73b7, type: 3}
+  kaijuName: Red Dino
   speed: 0
   maxHealth: 0
   damage: 20
   attackCooldown: 1.5
   attackRange: 8
   blockStrength: 0
-  cost: 0
+  cost: 1
   attackType: 1
   attackPrefab: {fileID: 975588017728026953, guid: 48171aaaab96b4e71b7f850fbda0cbd8, type: 3}
   specialAbilityCooldown: 0
