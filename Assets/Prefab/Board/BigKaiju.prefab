@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7207104476372334282}
   m_Layer: 0
   m_Name: BigKaiju
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1833447687
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7086923684946535517, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c07452081e70734e907f41bc2eed179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
 --- !u!50 &-7207104476372334282
 Rigidbody2D:
   serializedVersion: 5
