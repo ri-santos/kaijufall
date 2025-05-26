@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e273c67431441f48adadb6e62266606, type: 3}
   m_Name: Red Mecha
   m_EditorClassIdentifier: 
-  startingWeapon1: {fileID: 8853908761941188599, guid: d3b765af254026b46b775e64c6e2a874, type: 3}
-  startingWeapon2: {fileID: 2225893590402169288, guid: b2057b3929454e44b9161284a5706e31, type: 3}
+  startingWeapon: {fileID: 8203797998004420689, guid: f367b583ad766b442aa82c64d8c770d2, type: 3}
   maxHealth: 50
   recovery: 1
   moveSpeed: 5

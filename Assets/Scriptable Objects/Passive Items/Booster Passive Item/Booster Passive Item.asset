@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
-  m_Name: DMG Chip Passive Item
+  m_Name: Booster Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 200
+  multiplier: 50
+  level: 1
+  nextLevelPrefab: {fileID: 3333474068154123077, guid: 589c7ae0cd1433a44bbc4557268fa419, type: 3}

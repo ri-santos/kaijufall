@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     public float currentRecovery;
     [HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentMight;
     [HideInInspector]
     public float currentProjectileSpeed;
@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     public float currentSouls;
     [HideInInspector]
     public float currentMagnet;
+
 
     //Exp and lvl
     [Header("Exp/Lvl")]
@@ -48,6 +49,13 @@ public class PlayerManager : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
+    public GameObject secondWeaponTest;
+    public GameObject firstPassiveItemTest, secondPassiveItemTest;
+
     #region Singleton
     public static PlayerManager instance;
 
@@ -55,6 +63,9 @@ public class PlayerManager : MonoBehaviour
     {
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
+
+        inventory = GetComponent<InventoryManager>();
+
         if (instance != null)
         {
             Debug.LogWarning("Multiple instances of PlayerManager found. Destroying the new one.");
@@ -68,6 +79,12 @@ public class PlayerManager : MonoBehaviour
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentSouls = characterData.Souls;
         currentMagnet = characterData.Magnet;
+
+        SpawnWeapon(characterData.StartingWeapon);
+        SpawnWeapon(secondWeaponTest);
+        SpawnPassiveItem(firstPassiveItemTest);
+        SpawnPassiveItem(secondPassiveItemTest);
+
 
         instance = this;
     }
@@ -194,5 +211,32 @@ public class PlayerManager : MonoBehaviour
                 currentHealth = characterData.MaxHealth;
             }
         }
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogWarning("No more weapon slots available to spawn a new weapon.");
+            return;
+        }
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
+        
+        weaponIndex++;
+    }
+    public void SpawnPassiveItem(GameObject passiveItem)
+    {
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        {
+            Debug.LogWarning("No more passive Item slots available.");
+            return;
+        }
+        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        spawnedPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>());
+
+        passiveItemIndex++;
     }
 }
