@@ -23,7 +23,7 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindAnyObjectByType<PlayerManager>().currentMight;
+        return currentDamage *= FindAnyObjectByType<PlayerManager>().CurrentMight;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()

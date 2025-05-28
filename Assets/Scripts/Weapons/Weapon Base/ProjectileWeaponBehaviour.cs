@@ -26,7 +26,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindAnyObjectByType<PlayerManager>().currentMight;
+        return currentDamage *= FindAnyObjectByType<PlayerManager>().CurrentMight;
     }
 
     protected virtual void Start()
