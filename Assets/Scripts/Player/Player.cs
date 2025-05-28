@@ -40,17 +40,17 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (movement != null && playerManager != null)
+        if (movement != null && player != null)
         {
             moveDir = movement.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
+            rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
+        }
     }
 
     private void OnEnable()
     {
         movement = inputActions.Player.Move;
             movement.Enable();
-        }
     }
 
     private void OnDisable()
@@ -58,7 +58,8 @@ public class Player : MonoBehaviour
         // Add null check to prevent errors
         if (movement != null)
         {
-            movement.Disable();
+        movement.Disable();
         }
+    }
 
 }
