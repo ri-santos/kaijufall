@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
             timeSinceLastSpawn = 0f; // Reset the spawn timer
         }
     }
+
     void SpawnEnemy()
     {
         Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));

@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-
+    
     [HideInInspector]
     public float currentSpeed;
     [HideInInspector]
@@ -50,7 +50,7 @@ public class EnemyStats : MonoBehaviour
     }
 
     public void Kill()
-    {   
+    {
 
         Destroy(gameObject);
     }

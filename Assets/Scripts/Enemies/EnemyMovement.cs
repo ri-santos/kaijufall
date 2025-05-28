@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public EnemyScriptableObject enemyData;
     Transform target;
     EnemyStats enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

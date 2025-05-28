@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     {
         inputActions = new InputManager();
         rb = GetComponent<Rigidbody2D>();
+        
+        // Initialize input actions here since Awake runs before OnEnable
+        movement = inputActions.Player.Move;
     }
 
     private void Start()
@@ -37,19 +40,25 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveDir = movement.ReadValue<Vector2>();
+        if (movement != null && playerManager != null)
+        {
+            moveDir = movement.ReadValue<Vector2>();
         rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
     }
 
     private void OnEnable()
     {
         movement = inputActions.Player.Move;
-        movement.Enable();
+            movement.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        movement.Disable();
-    }
+        // Add null check to prevent errors
+        if (movement != null)
+        {
+            movement.Disable();
+        }
 
 }
