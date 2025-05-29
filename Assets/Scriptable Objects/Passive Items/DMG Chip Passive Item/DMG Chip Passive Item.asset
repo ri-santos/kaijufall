@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
   m_Name: DMG Chip Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 200
+  multiplier: 100
+  level: 1
+  nextLevelPrefab: {fileID: 1100590045223848697, guid: 2220dc1a25ccf04429a52a1171abbbaa, type: 3}
+  icon: {fileID: 8148798175944400101, guid: 305606fa1e6348145abc54b7e7f27586, type: 3}

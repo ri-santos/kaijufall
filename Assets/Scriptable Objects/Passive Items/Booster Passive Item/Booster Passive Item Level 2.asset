@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
-  m_Name: Booster Passive Item
+  m_Name: Booster Passive Item Level 2
   m_EditorClassIdentifier: 
-  multiplier: 50
+  multiplier: 100
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: -1781475074988479936, guid: 3207b8ca1f875ff45abf583495bf34e8, type: 3}
