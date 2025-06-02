@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6429165999461928127}
   - component: {fileID: 8496707801565645828}
   - component: {fileID: -8336621628088306932}
+  - component: {fileID: -5336708540869514923}
   m_Layer: 0
   m_Name: EnemyKaijuBoard
   m_TagString: Enemy
@@ -164,3 +165,18 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
   reward: 0
   invincibilityDuration: 0
+--- !u!114 &-5336708540869514923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700512497031387890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae8593accb275746b4cf44acabf91e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
+  attackPoint: {fileID: 0}
+  attackRadius: 1

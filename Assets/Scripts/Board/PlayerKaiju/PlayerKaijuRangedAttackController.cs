@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerKaijuMovement))]
-public class PlayerKaijuAttackController : MonoBehaviour
+public class PlayerKaijuRangedAttackController : MonoBehaviour
 {
     [SerializeField] private PlayerKaijuScriptableObject kaijuData;
     [SerializeField] private Transform attackPoint;
@@ -12,6 +12,9 @@ public class PlayerKaijuAttackController : MonoBehaviour
     private BoardEnemyStats smallKaijuTarget;
     private BigKaiju bigKaijuTarget;
     private int targetType; // 0 for small kaiju, 1 for big kaiju
+
+    private Projectile projectile;
+    public GameObject ProjectilePrefab; // Reference to the projectile prefab
 
     public bool CanAttack { get; private set; } // Added public property
 

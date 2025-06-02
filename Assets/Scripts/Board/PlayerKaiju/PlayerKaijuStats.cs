@@ -51,14 +51,4 @@ public class PlayerKaijuStats : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log("Player collided with enemy");
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            BoardEnemyStats enemy = collision.gameObject.GetComponent<BoardEnemyStats>();
-            enemy.TakeDamage(currentDamage);
-        }
-    }
 }

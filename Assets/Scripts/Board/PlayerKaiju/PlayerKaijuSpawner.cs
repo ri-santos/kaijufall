@@ -50,6 +50,7 @@ public class PlayerKaijuSpawner : MonoBehaviour
     {
         selectedTile.setOccupied(true);
         kaijuPrefab.GetComponent<PlayerKaijuMovement>().enabled = false;
+        kaijuPrefab.GetComponent<PlayerKaijuAttackController>().enabled = false;
         GameObject newKaiju = Instantiate(kaijuPrefab, selectedTile.transform.position, Quaternion.identity);
         kaijus.Add(newKaiju);
     }

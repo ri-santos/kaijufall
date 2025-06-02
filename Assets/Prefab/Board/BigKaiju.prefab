@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7207104476372334282}
   m_Layer: 0
   m_Name: BigKaiju
-  m_TagString: Enemy
+  m_TagString: BigKaiju
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c07452081e70734e907f41bc2eed179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  kaijuData: {fileID: 0}
 --- !u!50 &-7207104476372334282
 Rigidbody2D:
   serializedVersion: 5

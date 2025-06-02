@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebe05eb8171b9f45976484eddc92f76, type: 3}
   m_Name: PlayerKaijuScriptableObject_Ranged
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1482216451476195916, guid: 6e8be8702391e834688c9c2a76ccd075, type: 3}
+  prefab: {fileID: 1482216451476195916, guid: 47733baa9f1632844ab803219912a1bf, type: 3}
   kaijuName: Red Dino
-  speed: 0
+  speed: 1
   health: 0
   damage: 20
   attackCooldown: 1.5
-  attackRange: 8
+  attackRange: 4
   blockStrength: 0
   cost: 1

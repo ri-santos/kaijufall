@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -5,16 +6,24 @@ public class Projectile : MonoBehaviour
     private int damage;
     private Vector2 direction;
     private float speed = 10f;
+    [SerializeField] private float destroyDelay = 3f;
+
     [SerializeField] private TrailRenderer trail;
 
     [Header("Visuals")]
     [SerializeField] private GameObject impactEffect;
+    [SerializeField] private GameObject prefab; // Reference to the projectile prefab
+    public GameObject Prefab { get => prefab; private set => prefab = value; }
 
     public void Initialize(int projectileDamage, Vector2 projectileDirection)
     {
         damage = projectileDamage;
         direction = projectileDirection;
-        Destroy(gameObject, 3f); // Auto-destroy after 3 seconds
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, destroyDelay);
     }
 
     private void Update()
@@ -24,16 +33,16 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("BigKaiju"))
         {
             collision.GetComponent<BigKaiju>().TakeDamage(damage);
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-        if (trail != null) trail.Clear();
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<BoardEnemyStats>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 
 }
