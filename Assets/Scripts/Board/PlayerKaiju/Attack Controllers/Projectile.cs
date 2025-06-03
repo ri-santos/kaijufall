@@ -3,32 +3,45 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private int damage;
+    private float damage;
     private Vector2 direction;
     private float speed = 10f;
-    [SerializeField] private float destroyDelay = 3f;
+    private float range;
+    private float distanceTraveled = 0f;
 
     [SerializeField] private TrailRenderer trail;
+
+    Rigidbody2D rb;
+    public PlayerKaijuScriptableObject kaijuData;
 
     [Header("Visuals")]
     [SerializeField] private GameObject impactEffect;
     [SerializeField] private GameObject prefab; // Reference to the projectile prefab
     public GameObject Prefab { get => prefab; private set => prefab = value; }
 
-    public void Initialize(int projectileDamage, Vector2 projectileDirection)
-    {
-        damage = projectileDamage;
-        direction = projectileDirection;
-    }
 
     private void Start()
     {
-        Destroy(gameObject, destroyDelay);
+        rb = GetComponent<Rigidbody2D>();
+        damage = kaijuData.Damage;
+        range = kaijuData.AttackRange;
     }
 
     private void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        rb.linearVelocity = direction * speed;
+        distanceTraveled += speed * Time.deltaTime;
+        if (distanceTraveled >= range)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void DirectionChecker(Vector3 targetPos)
+    {
+        float lookAngle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
+        direction = (targetPos - transform.position).normalized;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, lookAngle));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -10,7 +10,7 @@ public class BeamBehaviour : ProjectileWeaponBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-  void Update()
+    void Update()
     {
         rb.linearVelocity = direction * currentSpeed;
     }

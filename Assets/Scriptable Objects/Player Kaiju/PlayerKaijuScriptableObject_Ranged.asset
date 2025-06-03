@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1482216451476195916, guid: 47733baa9f1632844ab803219912a1bf, type: 3}
   kaijuName: Red Dino
-  speed: 1
-  health: 0
+  speed: 0.5
+  health: 20
   damage: 20
-  attackCooldown: 1.5
+  attackCooldown: 1
   attackRange: 4
   blockStrength: 0
   cost: 1

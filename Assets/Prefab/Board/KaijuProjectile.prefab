@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5260768792375331862}
+  - component: {fileID: 588955454761062443}
   - component: {fileID: 5204180582077580328}
   - component: {fileID: 6492975562419966623}
-  - component: {fileID: 588955454761062443}
   - component: {fileID: 6002555370288847001}
   m_Layer: 0
   m_Name: KaijuProjectile
@@ -30,52 +30,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.008, y: -0.005, z: 0}
-  m_LocalScale: {x: 0.7096, y: 0.6086, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.07, y: 0.91770303, z: 1.5078919}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &5204180582077580328
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975588017728026953}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &6492975562419966623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975588017728026953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac76e9f878ae8d46b3d945c8cdb67cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trail: {fileID: 0}
-  impactEffect: {fileID: 0}
 --- !u!212 &588955454761062443
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1293849753
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 371061619, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
   m_Color: {r: 0.45490196, g: 0.654902, b: 0.5058824, a: 1}
   m_FlipX: 0
@@ -131,6 +90,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &5204180582077580328
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975588017728026953}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &6492975562419966623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975588017728026953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac76e9f878ae8d46b3d945c8cdb67cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 3
+  trail: {fileID: 0}
+  kaijuData: {fileID: 11400000, guid: e619f159afdfa45bca11960fe4708525, type: 2}
+  impactEffect: {fileID: 0}
+  prefab: {fileID: 975588017728026953}
 --- !u!61 &6002555370288847001
 BoxCollider2D:
   m_ObjectHideFlags: 0

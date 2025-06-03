@@ -23,29 +23,12 @@ public class BoardEnemyStats : MonoBehaviour
         reward = enemyData.Reward;
     }
 
-    private void Update()
-    {
-        if (invincibilityTimer > 0)
-        {
-            invincibilityTimer -= Time.deltaTime;
-        }
-        else if (isInvincible)
-        {
-            isInvincible = false;
-        }
-    }
-
     public void TakeDamage(float dmg)
     {
-        if (!isInvincible)
+        currentHealth -= dmg;
+        if (currentHealth <= 0)
         {
-            currentHealth -= dmg;
-            invincibilityTimer = invincibilityDuration;
-            isInvincible = true;
-            if (currentHealth <= 0)
-            {
-                Kill();
-            }
+            Kill();
         }
     }
 

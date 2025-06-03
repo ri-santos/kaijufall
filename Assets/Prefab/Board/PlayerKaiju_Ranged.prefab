@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1601508052474491767}
   - component: {fileID: 4559696842110343641}
   - component: {fileID: 2428183729723240127}
-  - component: {fileID: -5193744914044601750}
+  - component: {fileID: 3230574061015081683}
   - component: {fileID: 5900540468961137607}
   m_Layer: 0
   m_Name: PlayerKaiju_Ranged
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
---- !u!114 &-5193744914044601750
+--- !u!114 &3230574061015081683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,11 +160,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482216451476195916}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc0a5c0312c3804cbe2db9db1426baa, type: 3}
+  m_Script: {fileID: 11500000, guid: cdc326771b7b70d469df1d582e0411fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kaijuData: {fileID: 11400000, guid: e619f159afdfa45bca11960fe4708525, type: 2}
-  attackPoint: {fileID: 3000688215206389570}
+  attackPoint: {fileID: 0}
+  ProjectilePrefab: {fileID: 975588017728026953, guid: 48171aaaab96b4e71b7f850fbda0cbd8, type: 3}
 --- !u!114 &5900540468961137607
 MonoBehaviour:
   m_ObjectHideFlags: 0
