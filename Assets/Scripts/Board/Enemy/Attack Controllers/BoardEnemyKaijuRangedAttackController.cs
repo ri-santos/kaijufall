@@ -7,6 +7,7 @@ public class BoardEnemyKaijuRangedAttackController : BoardEnemyKaijuAttackContro
 
     protected override void Attack()
     {
+        Debug.Log("Ranged attack incoming");
         GameObject projectile = Instantiate(ProjectilePrefab);
         projectile.transform.position = attackPoint.position;
         projectile.GetComponent<Projectile>().DirectionChecker(target.transform.position);

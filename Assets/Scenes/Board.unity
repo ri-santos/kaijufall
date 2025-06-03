@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7784792651390477093, guid: 9d8db398bfeb3704bb2f4371f003aebe, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: b4761e65ad60c461ab6fe35af0d6daeb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1326,14 +1330,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1324845970
-Transform:
+--- !u!224 &1324845970
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324845967}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1341,6 +1344,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324845971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,6 +1504,14 @@ PrefabInstance:
     - target: {fileID: 3530259149935846319, guid: eaaca81a5a3ec55419bc72a43d4c9de1, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670483946063428149, guid: eaaca81a5a3ec55419bc72a43d4c9de1, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670483946063428149, guid: eaaca81a5a3ec55419bc72a43d4c9de1, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4461852225491241025, guid: eaaca81a5a3ec55419bc72a43d4c9de1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1720,7 +1736,7 @@ PrefabInstance:
     - target: {fileID: 8180419812448980453, guid: 1a15f5b96183a814bbc6e37192ffbaf0, type: 3}
       propertyPath: _cam
       value: 
-      objectReference: {fileID: 1324845970}
+      objectReference: {fileID: 0}
     - target: {fileID: 8180419812448980453, guid: 1a15f5b96183a814bbc6e37192ffbaf0, type: 3}
       propertyPath: _width
       value: 11

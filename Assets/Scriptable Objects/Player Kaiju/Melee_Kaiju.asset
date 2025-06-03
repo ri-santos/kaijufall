@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebe05eb8171b9f45976484eddc92f76, type: 3}
   m_Name: Melee_Kaiju
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1482216451476195916, guid: 29b1ffbe6df5744659831b2461fdc265, type: 3}
   kaijuName: 
-  speed: 0
-  maxHealth: 0
-  damage: 30
+  speed: 0.1
+  health: 0
+  damage: 3
   attackCooldown: 1
   attackRange: 1.5
   blockStrength: 0
   cost: 0
-  attackType: 0
-  attackPrefab: {fileID: 0}
-  specialAbilityCooldown: 0

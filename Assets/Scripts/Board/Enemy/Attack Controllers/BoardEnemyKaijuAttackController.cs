@@ -7,7 +7,8 @@ public class BoardEnemyKaijuAttackController : MonoBehaviour
     [SerializeField] protected float attackRadius = 1f;
 
     protected float currentAttackCooldown;
-    protected PlayerKaijuStats target { get; private set; }
+    protected PlayerKaijuStats target;
+    public PlayerKaijuStats Target => target;
 
     protected bool inCooldown;
     public bool InCooldown => inCooldown; // Public property to access canAttack
@@ -45,16 +46,7 @@ public class BoardEnemyKaijuAttackController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        if (target == null) return;
-
-        // Apply damage
-        target.TakeDamage(kaijuData.Damage);
-
-        // Visual feedback
-        Debug.Log($"Enemy kaiju attacked! Damage: {kaijuData.Damage}");
-
-        // Cooldown
-        currentAttackCooldown = kaijuData.AttackCooldown;
+        
     }
 
     private void OnDrawGizmosSelected()

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5900540468961137607}
   m_Layer: 0
   m_Name: PlayerKaiju_Ranged
-  m_TagString: Untagged
+  m_TagString: PlayerKaiju
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

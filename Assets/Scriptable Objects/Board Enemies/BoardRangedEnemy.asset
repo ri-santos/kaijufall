@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ac132b02032d70409538592bb98d15f, type: 3}
-  m_Name: BoardEnemy
+  m_Name: BoardRangedEnemy
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
+  prefab: {fileID: 3700512497031387890, guid: b33af0762f2ffaf46b5e0b6d3ec247a1, type: 3}
   enemyName: 
-  speed: 5
-  health: 5
-  damage: 7
+  speed: 0.2
+  health: 20
+  damage: 3
   attackCooldown: 1
-  attackRange: 2
+  attackRange: 3
   reward: 0

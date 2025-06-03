@@ -4,11 +4,13 @@ public class BigKaiju : MonoBehaviour
 {
     public BigKaijuScriptableObject kaijuData;
     private float currentHealth;
+    [SerializeField] private int rangeNumEnemies;
+    [SerializeField] private GameObject[] enemies;
 
     private void Start()
     {
         currentHealth = kaijuData.Health;
-
+        rangeNumEnemies = Random.Range(-rangeNumEnemies, rangeNumEnemies);
     }
 
     public void TakeDamage(float damage)
@@ -23,18 +25,20 @@ public class BigKaiju : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        for (int i = 0; i < kaijuData.NumEnemies; i++)
+        for (int i = 0; i < kaijuData.NumEnemies + rangeNumEnemies; i++)
         {
+            int type = Random.Range(0, enemies.Length);
+            Debug.Log(type);
             Vector3 spawnPos;
             if (i % 2 == 0)
             {
-                spawnPos = new Vector3(transform.position.x + Random.Range(-7f, 0f), transform.position.y + Random.Range(0f, 2f), 0);
+                spawnPos = new Vector3(transform.position.x + Random.Range(-10f, -2f), transform.position.y + Random.Range(0f, 3f), 0);
             }
             else
             {
-                spawnPos = new Vector3(transform.position.x + Random.Range(0f, 7f), transform.position.y + Random.Range(0f, 2f), 0);
+                spawnPos = new Vector3(transform.position.x + Random.Range(2f, 10f), transform.position.y + Random.Range(0f, 3f), 0);
             }
-            GameObject enemy = Instantiate(kaijuData.enemyPrefab, spawnPos, Quaternion.identity);
+            GameObject enemy = Instantiate(enemies[type], spawnPos, Quaternion.identity);
             enemy.transform.SetParent(transform);
         }
     }

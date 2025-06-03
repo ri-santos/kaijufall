@@ -15,7 +15,7 @@ public class BoardEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = attackController.target;
+        target = attackController.Target;
 
         if(!attackController.InRange)
         {

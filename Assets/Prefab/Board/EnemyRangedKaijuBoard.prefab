@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1482216451476195916
+--- !u!1 &3700512497031387890
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3000688215206389570}
-  - component: {fileID: 1601508052474491767}
-  - component: {fileID: 4559696842110343641}
-  - component: {fileID: 2428183729723240127}
-  - component: {fileID: 3359710043162665282}
-  - component: {fileID: 2180742617650224840}
+  - component: {fileID: 6798039674365265755}
+  - component: {fileID: 1321432538616600534}
+  - component: {fileID: 6429165999461928127}
+  - component: {fileID: 8496707801565645828}
+  - component: {fileID: -8336621628088306932}
+  - component: {fileID: 7671818920923329730}
   m_Layer: 0
-  m_Name: PlayerKaiju_Special
-  m_TagString: PlayerKaiju
+  m_Name: EnemyRangedKaijuBoard
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3000688215206389570
+--- !u!4 &6798039674365265755
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
+  m_GameObject: {fileID: 3700512497031387890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 523.3258, y: -111.697, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3268451816839998581}
+  m_LocalPosition: {x: -0.45968354, y: -3.6911514, z: 0}
+  m_LocalScale: {x: 2.96, y: 2.96, z: 2.96}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1601508052474491767
+--- !u!212 &1321432538616600534
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
+  m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293849753
   m_SortingLayer: 3
-  m_SortingOrder: 20
+  m_SortingOrder: 0
   m_Sprite: {fileID: 6257046027232108077, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,13 +91,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4559696842110343641
+--- !u!61 &6429165999461928127
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
+  m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -136,77 +135,49 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.62, y: 0.62}
+  m_Size: {x: 0.63, y: 0.68}
   m_EdgeRadius: 0
---- !u!114 &2428183729723240127
+--- !u!114 &8496707801565645828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed2af22f746ebb4690170ca4d94ead6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
---- !u!114 &3359710043162665282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc0a5c0312c3804cbe2db9db1426baa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: 881407eaf42874ec4a3ba5432d40fe10, type: 2}
-  attackPoint: {fileID: 3000688215206389570}
---- !u!114 &2180742617650224840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482216451476195916}
+  m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508a78d74b201ce498742aa8e805b89d, type: 3}
+  m_Script: {fileID: 11500000, guid: eb08c4428cdec95488f84d61c4cebbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: 881407eaf42874ec4a3ba5432d40fe10, type: 2}
+  enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
+--- !u!114 &-8336621628088306932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700512497031387890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab1cf2f19cb3134599c81669d2f4a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
+  reward: 0
   invincibilityDuration: 0
---- !u!1 &7911882283797603717
-GameObject:
+--- !u!114 &7671818920923329730
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3268451816839998581}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3268451816839998581
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7911882283797603717}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 0.017, z: 0}
-  m_LocalScale: {x: 3.6472, y: 4.5612793, z: 3.6472}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3000688215206389570}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 3700512497031387890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391391c459bb2644997bca0ed4f8c35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: fb3b6f7717319e14badce073d6aa29d2, type: 2}
+  attackPoint: {fileID: 0}
+  attackRadius: 1
+  ProjectilePrefab: {fileID: 975588017728026953, guid: 2058e2edd9428e0419199d301fee5c79, type: 3}

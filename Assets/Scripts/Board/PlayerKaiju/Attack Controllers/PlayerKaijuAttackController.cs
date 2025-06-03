@@ -36,7 +36,6 @@ public class PlayerKaijuAttackController : MonoBehaviour
         target = smallKaijuTarget != null ? smallKaijuTarget.gameObject : bigKaijuTarget?.gameObject;
 
         float distance = Vector2.Distance(transform.position, target.transform.position);
-        Debug.Log($"Distance to target: {currentAttackCooldown}");
 
         currentAttackCooldown -= Time.deltaTime;
         inCooldown = currentAttackCooldown > 0;
@@ -51,9 +50,6 @@ public class PlayerKaijuAttackController : MonoBehaviour
     {
         // Apply damage
        smallKaijuTarget.TakeDamage(kaijuData.Damage);
-
-        // Visual feedback
-        Debug.Log($"{kaijuData.KaijuName} attacked! Damage: {kaijuData.Damage}");
 
         // Cooldown
         currentAttackCooldown = kaijuData.AttackCooldown;

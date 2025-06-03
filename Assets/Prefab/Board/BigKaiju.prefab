@@ -101,7 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c07452081e70734e907f41bc2eed179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 0}
+  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
+  rangeNumEnemies: 3
+  enemies:
+  - {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
+  - {fileID: 3700512497031387890, guid: b33af0762f2ffaf46b5e0b6d3ec247a1, type: 3}
 --- !u!50 &-7207104476372334282
 Rigidbody2D:
   serializedVersion: 5
