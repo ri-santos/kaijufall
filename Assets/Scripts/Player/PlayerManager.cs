@@ -189,8 +189,8 @@ public class PlayerManager : MonoBehaviour
 
         //second weapon and passive items are just for testing purposes, they can be removed later
         SpawnWeapon(characterData.StartingWeapon);
-        SpawnWeapon(secondWeaponTest);
-        SpawnPassiveItem(firstPassiveItemTest);
+        //SpawnWeapon(secondWeaponTest);
+        //SpawnPassiveItem(firstPassiveItemTest);
         SpawnPassiveItem(secondPassiveItemTest);
 
 
@@ -249,6 +249,8 @@ public class PlayerManager : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            GameManager.instance.StartLevelUp();
         }
     }
 

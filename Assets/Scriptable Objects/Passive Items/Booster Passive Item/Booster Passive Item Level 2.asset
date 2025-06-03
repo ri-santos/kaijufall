@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 100
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Booster Lvl2
+  description: Increases Move Speed by 100%
   icon: {fileID: -1781475074988479936, guid: 3207b8ca1f875ff45abf583495bf34e8, type: 3}

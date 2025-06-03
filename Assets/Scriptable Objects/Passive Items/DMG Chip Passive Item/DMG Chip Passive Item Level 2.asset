@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
   m_Name: DMG Chip Passive Item Level 2
   m_EditorClassIdentifier: 
-  multiplier: 150
+  multiplier: 100
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: DMG Chip Lvl2
+  description: Increases Damage by 100%
   icon: {fileID: 8148798175944400101, guid: 305606fa1e6348145abc54b7e7f27586, type: 3}

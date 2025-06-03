@@ -16,7 +16,7 @@ MonoBehaviour:
   enemyName: Calculo
   speed: 2
   health: 10
-  damage: 5
+  damage: 10
   attackCooldown: 0
   attackRange: 0
   reward: 0

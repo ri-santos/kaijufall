@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 2
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Plasma Canon Lvl2
+  description: +1 Pierce / +5 Speed
   icon: {fileID: -3616032387214515707, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
