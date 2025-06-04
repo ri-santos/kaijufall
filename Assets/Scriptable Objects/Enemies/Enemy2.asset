@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 3700512497031387890, guid: eb82bd351e65d3e4785aab5c92060cd3, type: 3}
   enemyName: Calculo
   speed: 3
-  health: 10
+  health: 40
   damage: 15
   attackCooldown: 0
   attackRange: 0

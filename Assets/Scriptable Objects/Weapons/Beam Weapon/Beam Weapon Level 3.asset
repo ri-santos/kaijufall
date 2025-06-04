@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c92bac39a0ea3d418f94d2eda7f39b9, type: 3}
-  m_Name: Beam Weapon Level 2
+  m_Name: Beam Weapon Level 3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8853908761941188599, guid: 40f55984b3cc18144ab7f432e9c3f007, type: 3}
-  damage: 5
+  prefab: {fileID: 8853908761941188599, guid: 41adda8b63bf299429546870b75b3b4f, type: 3}
+  damage: 10
   speed: 15
   cooldownDuration: 2
   pierce: 2
   level: 2
   nextLevelPrefab: {fileID: 0}
-  name: Plasma Canon Lvl2
-  description: Pierce Up By 1 and Speed Up By 5
+  name: Plasma Canon Lvl3
+  description: Damage Up By 5
   icon: {fileID: -3616032387214515707, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
