@@ -27,7 +27,7 @@ public class PlayerKaijuRangedAttackController : PlayerKaijuAttackController
     {
         GameObject projectile = Instantiate(ProjectilePrefab);
         projectile.transform.position = attackPoint.position;
-        projectile.GetComponent<Projectile>().DirectionChecker(target.transform.position);
+        projectile.GetComponent<Projectile>().DirectionChecker(target.transform.position, target.tag);
     }
 
     private void OnDrawGizmosSelected()

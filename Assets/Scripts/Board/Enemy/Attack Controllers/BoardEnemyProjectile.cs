@@ -11,7 +11,7 @@ public class BoardEnemyProjectile : MonoBehaviour
     [SerializeField] private TrailRenderer trail;
 
     Rigidbody2D rb;
-    public PlayerKaijuScriptableObject kaijuData;
+    public EnemyScriptableObject kaijuData;
 
     [Header("Visuals")]
     [SerializeField] private GameObject impactEffect;

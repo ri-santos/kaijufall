@@ -40,16 +40,13 @@ public class PlayerKaijuAttackController : MonoBehaviour
         currentAttackCooldown -= Time.deltaTime;
         inCooldown = currentAttackCooldown > 0;
 
-        inRange = distance <= attackRadius;
-
-        Debug.Log(canAttack);
-       
+        inRange = distance <= attackRadius;       
     }
 
     protected virtual void AttackSmall()
     {
         // Apply damage
-       smallKaijuTarget.TakeDamage(kaijuData.Damage);
+        smallKaijuTarget.TakeDamage(kaijuData.Damage);
 
         // Cooldown
         currentAttackCooldown = kaijuData.AttackCooldown;

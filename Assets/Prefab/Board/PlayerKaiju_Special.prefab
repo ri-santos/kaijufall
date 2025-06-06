@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed2af22f746ebb4690170ca4d94ead6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
+  playerKaijuData: {fileID: 11400000, guid: 881407eaf42874ec4a3ba5432d40fe10, type: 2}
 --- !u!114 &3359710043162665282
 MonoBehaviour:
   m_ObjectHideFlags: 0

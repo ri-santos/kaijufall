@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BoardEnemyKaijuRangedAttackController : BoardEnemyKaijuAttackController
 {
-    private Projectile projectile;
+    private BoardEnemyProjectile projectile;
     public GameObject ProjectilePrefab; // Reference to the projectile prefab
 
     protected override void Attack()
@@ -10,7 +10,7 @@ public class BoardEnemyKaijuRangedAttackController : BoardEnemyKaijuAttackContro
         Debug.Log("Ranged attack incoming");
         GameObject projectile = Instantiate(ProjectilePrefab);
         projectile.transform.position = attackPoint.position;
-        projectile.GetComponent<Projectile>().DirectionChecker(target.transform.position);
+        projectile.GetComponent<BoardEnemyProjectile>().DirectionChecker(target.transform.position);
     }
 
     private void OnDrawGizmosSelected()

@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293849753
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 30
   m_Sprite: {fileID: 371061619, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
   m_Color: {r: 0.45490196, g: 0.654902, b: 0.5058824, a: 1}
   m_FlipX: 0
@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac76e9f878ae8d46b3d945c8cdb67cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 3
   trail: {fileID: 0}
   kaijuData: {fileID: 11400000, guid: e619f159afdfa45bca11960fe4708525, type: 2}
   impactEffect: {fileID: 0}

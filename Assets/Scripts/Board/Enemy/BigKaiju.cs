@@ -1,7 +1,9 @@
+using TMPro;
 using UnityEngine;
 
 public class BigKaiju : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI hpDisplay;
     public BigKaijuScriptableObject kaijuData;
     private float currentHealth;
     [SerializeField] private int rangeNumEnemies;
@@ -11,12 +13,14 @@ public class BigKaiju : MonoBehaviour
     {
         currentHealth = kaijuData.Health;
         rangeNumEnemies = Random.Range(-rangeNumEnemies, rangeNumEnemies);
+        hpDisplay.text = "Big Kaiju HP: " + currentHealth.ToString("F0");
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log("Current Health: " + currentHealth);
+        hpDisplay.text = "Big Kaiju HP: " + currentHealth.ToString("F0");
         if (currentHealth <= 0)
         {
             Kill();

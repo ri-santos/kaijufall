@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private float speed = 10f;
     private float range;
     private float distanceTraveled = 0f;
+    private string targetTag;
 
     [SerializeField] private TrailRenderer trail;
 
@@ -37,16 +38,17 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void DirectionChecker(Vector3 targetPos)
+    public void DirectionChecker(Vector3 targetPos, string tag)
     {
         float lookAngle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
         direction = (targetPos - transform.position).normalized;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, lookAngle));
+        targetTag = tag;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("BigKaiju"))
+        if (collision.CompareTag("BigKaiju") && targetTag == "BigKaiju")
         {
             collision.GetComponent<BigKaiju>().TakeDamage(damage);
             Destroy(gameObject);

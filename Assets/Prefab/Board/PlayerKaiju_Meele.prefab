@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed2af22f746ebb4690170ca4d94ead6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
+  playerKaijuData: {fileID: 11400000, guid: b4761e65ad60c461ab6fe35af0d6daeb, type: 2}
 --- !u!114 &5440774484615554673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7493f3d55c1b14eb40427951aa1443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 0}
+  kaijuData: {fileID: 11400000, guid: b4761e65ad60c461ab6fe35af0d6daeb, type: 2}
   attackPoint: {fileID: 0}
 --- !u!114 &-2685278522907081838
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508a78d74b201ce498742aa8e805b89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: c35e1273b13af834883a4f204a521551, type: 2}
+  kaijuData: {fileID: 11400000, guid: b4761e65ad60c461ab6fe35af0d6daeb, type: 2}
   invincibilityDuration: 0
 --- !u!1 &7911882283797603717
 GameObject:

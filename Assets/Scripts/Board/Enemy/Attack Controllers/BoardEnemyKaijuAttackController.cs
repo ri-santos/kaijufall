@@ -4,7 +4,7 @@ public class BoardEnemyKaijuAttackController : MonoBehaviour
 {
     [SerializeField] protected EnemyScriptableObject kaijuData;
     [SerializeField] protected Transform attackPoint;
-    [SerializeField] protected float attackRadius = 1f;
+    protected float attackRadius;
 
     protected float currentAttackCooldown;
     protected PlayerKaijuStats target;
@@ -23,6 +23,7 @@ public class BoardEnemyKaijuAttackController : MonoBehaviour
     {
         target = FindAnyObjectByType<PlayerKaijuStats>(); // Updated to non-obsolete method
         attackPoint = transform; // Use the transform if attackPoint is not set
+        attackRadius = kaijuData.AttackRange; // Set attack radius from kaiju data
     }
 
     protected virtual void Update()
