@@ -18,7 +18,7 @@ MonoBehaviour:
   cooldownDuration: 2
   pierce: 2
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 1929940533416850822, guid: 29c92d33b69a98447ba0e4f0f89f18f5, type: 3}
   name: Plasma Canon Lvl2
   description: Pierce Up By 1 and Speed Up By 5
   icon: {fileID: -3616032387214515707, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
