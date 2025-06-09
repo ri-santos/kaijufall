@@ -6,22 +6,24 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private InputManager inputActions;
-    private InputAction movement;
+    //private InputManager inputActions;
+    //private InputAction movement;
 
     Rigidbody2D rb;
     private PlayerManager player;
+
+    [HideInInspector]
+    public float lastHorizontalVector;
+    [HideInInspector] 
+    public float lastVerticalVector;
 
     [HideInInspector]
     Vector2 moveDir;
 
     private void Awake()
     {
-        inputActions = new InputManager();
+        //inputActions = new InputManager();
         rb = GetComponent<Rigidbody2D>();
-        
-        // Initialize input actions here since Awake runs before OnEnable
-        movement = inputActions.Player.Move;
     }
 
     private void Start()
@@ -38,28 +40,48 @@ public class Player : MonoBehaviour
         return moveDir;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (movement != null && player != null)
+        InputManagement();
+    }
+
+    void FixedUpdate()
+    {
+        Move();
+    }
+
+    void InputManagement()
+    {
+        if (GameManager.instance.isGameOver)
         {
-            moveDir = movement.ReadValue<Vector2>();
-            rb.linearVelocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
+            return;
+        }
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        moveDir = new Vector2(moveX, moveY).normalized;
+
+        if(moveDir.x != 0)
+        {
+            lastHorizontalVector = moveDir.x;
+        }
+
+        if(moveDir.y != 0)
+        {
+            lastVerticalVector = moveDir.y;
         }
     }
 
-    private void OnEnable()
+    void Move()
     {
-        movement = inputActions.Player.Move;
-            movement.Enable();
+        if (GameManager.instance.isGameOver)
+        {
+            return;
+        }
+        rb.linearVelocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
     }
 
-    private void OnDisable()
-    {
-        // Add null check to prevent errors
-        if (movement != null)
-        {
-        movement.Disable();
-        }
-    }
+
 
 }
