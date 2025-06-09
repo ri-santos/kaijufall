@@ -4,12 +4,16 @@ using UnityEngine;
 public class CharacterScriptableObject : ScriptableObject
 {
     [SerializeField]
-    private GameObject startingWeapon1;
-    public GameObject StartingWeapon1 { get => startingWeapon1; private set => startingWeapon1 =value; }
+    Sprite icon;
+    public Sprite Icon { get => icon; private set => icon = value; }
 
     [SerializeField]
-    private GameObject startingWeapon2;
-    public GameObject StartingWeapon2 { get => startingWeapon2; private set => startingWeapon2 = value; }
+    new string name;
+    public string Name { get => name; private set => name = value; }
+
+    [SerializeField]
+    private GameObject startingWeapon;
+    public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon =value; }
 
     [SerializeField]
     private float maxHealth;

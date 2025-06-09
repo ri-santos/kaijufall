@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728b98df5448f1b40ba0562e745a4c9f, type: 3}
+  m_Name: Booster Passive Item
+  m_EditorClassIdentifier: 
+  multiplier: 50
+  level: 1
+  nextLevelPrefab: {fileID: 3333474068154123077, guid: 589c7ae0cd1433a44bbc4557268fa419, type: 3}
+  name: Booster
+  description: Increases Move Speed by 50%
+  icon: {fileID: -1781475074988479936, guid: 3207b8ca1f875ff45abf583495bf34e8, type: 3}

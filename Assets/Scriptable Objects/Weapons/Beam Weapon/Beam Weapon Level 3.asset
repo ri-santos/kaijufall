@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c92bac39a0ea3d418f94d2eda7f39b9, type: 3}
-  m_Name: Melee Weapon
+  m_Name: Beam Weapon Level 3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2225893590402169288, guid: b2057b3929454e44b9161284a5706e31, type: 3}
-  damage: 2
-  speed: 0
-  cooldownDuration: 3
-  pierce: 0
+  prefab: {fileID: 8853908761941188599, guid: 41adda8b63bf299429546870b75b3b4f, type: 3}
+  damage: 10
+  speed: 15
+  cooldownDuration: 2
+  pierce: 2
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  name: Plasma Canon Lvl3
+  description: Damage Up By 5
+  icon: {fileID: -3616032387214515707, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
