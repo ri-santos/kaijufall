@@ -15,6 +15,9 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, enemy.currentSpeed * Time.deltaTime);
+        if (target != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, enemy.currentSpeed * Time.deltaTime);
+        }
     }
 }

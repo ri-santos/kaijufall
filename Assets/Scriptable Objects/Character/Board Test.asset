@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e273c67431441f48adadb6e62266606, type: 3}
-  m_Name: Board Test Mecha
+  m_Name: Board Test
   m_EditorClassIdentifier: 
-  startingWeapon1: {fileID: 8853908761941188599, guid: d3b765af254026b46b775e64c6e2a874, type: 3}
-  startingWeapon2: {fileID: 2225893590402169288, guid: b2057b3929454e44b9161284a5706e31, type: 3}
-  maxHealth: 50
+  icon: {fileID: 350745991, guid: 8b71259b762b97246b987e9222ab27b0, type: 3}
+  name: Blue Mecha
+  startingWeapon: {fileID: 1929940533416850822, guid: d4d621b2a197afa49ab606cffa62098d, type: 3}
+  maxHealth: 100
   recovery: 1
   moveSpeed: 5
-  might: 2
+  might: 1
   projectileSpeed: 0
   souls: 50
   magnet: 1.6

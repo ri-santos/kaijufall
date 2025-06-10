@@ -1,17 +1,38 @@
 using UnityEngine;
 
-public class FollowCamera1 : MonoBehaviour
+public class FollowCamera : MonoBehaviour
 {
-    public Transform target;
+    public Transform playerTarget;
+    public Transform boardTarget;
+    public Transform cameraTarget;
     [SerializeField] public Vector3 offset;
+    private Camera cameraController => GetComponent<Camera>();
 
-    private void Awake()
+    private void Start()
     {
-        target = FindAnyObjectByType<Player>().transform;
+        playerTarget = FindAnyObjectByType<Player>().transform;
+        cameraTarget = playerTarget;
+        GameManager.instance.onChangeToBoard += ChangeToBoardCamera;
+        GameManager.instance.onChangeToPlayer += ChangeToPlayerCamera;
     }
     // Update is called once per frame
     void Update()
     {
-        transform.position = target.position + offset;
+        transform.position = cameraTarget.position + offset;
+    }
+    public void ChangeToBoardCamera()
+    {
+        Debug.Log("Changing to board camera");
+        cameraTarget = boardTarget;
+        offset = new Vector3(0, 0, -10);
+        cameraController.orthographicSize = 10f; // Adjust the orthographic size as needed
+    }
+
+    public void ChangeToPlayerCamera()
+    {
+        Debug.Log("Changing to player camera");
+        cameraTarget = playerTarget;
+        offset = new Vector3(0, 0, -10);
+        cameraController.orthographicSize = 5f; // Adjust the orthographic size as needed
     }
 }

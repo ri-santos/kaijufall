@@ -6,6 +6,7 @@ public class BigKaiju : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hpDisplay;
     public BigKaijuScriptableObject kaijuData;
     private float currentHealth;
+    public float CurrentHealth => currentHealth;
     [SerializeField] private int rangeNumEnemies;
     [SerializeField] private GameObject[] enemies;
 
@@ -50,5 +51,6 @@ public class BigKaiju : MonoBehaviour
     void Kill()
     {
         Destroy(gameObject);
+        GameManager.instance.GameOver();
     }
 }

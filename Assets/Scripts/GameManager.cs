@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         Paused,
         GameOver,
         LevelUp,
+        Board,
     }
 
     //Storing the current and previous game states
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
+    public GameObject boardScreen;
+    public GameObject inventory;
+    public GameObject xpBar;
 
 
     //current stats display
@@ -53,6 +57,11 @@ public class GameManager : MonoBehaviour
     public bool choosingUpgrade;
 
     public GameObject playerObject;
+    public GameObject enemySpawner;
+    public GameObject bigKaiju;
+
+    public System.Action onChangeToBoard;
+    public System.Action onChangeToPlayer;
 
     private void Awake()
     {
@@ -75,7 +84,17 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                CheckForBoard(); // Check for board state switch
                 UpdateStopwatch(); // Update the stopwatch time
+                break;
+            case GameState.Board:
+                if (bigKaiju == null)
+                {
+                    isGameOver = true;
+                    GameOver(); // If game is over, switch to GameOver state
+                }
+                CheckForPauseAndResume();
+                CheckForBoard();
                 break;
             case GameState.Paused:
                 CheckForPauseAndResume();
@@ -108,6 +127,7 @@ public class GameManager : MonoBehaviour
     {
         currentState = newState;
     }
+
     public void PauseGame()
     {
         if(currentState != GameState.Paused)
@@ -146,15 +166,85 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void CheckForBoard()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (currentState == GameState.Gameplay)
+            {
+                StartBoard();
+            }
+            else if (currentState == GameState.Board)
+            {
+                ChangeToPlayer();
+            }
+            else
+            {
+                Debug.LogWarning("Cannot switch to Board state from " + currentState);
+            }
+        }
+    }
+
+    public void StartBoard()
+    {
+        onChangeToBoard?.Invoke();
+        ChangeState(GameState.Board);
+        DisableRoguelikeScreens();
+        boardScreen.SetActive(true);
+        Debug.Log("Board State Started");
+        playerObject.SetActive(false); // Hide the player object when switching to board state
+        //enemySpawner.SetActive(false);
+        bigKaiju.SetActive(true); // Show the big kaiju when switching to board state
+    }
+
+    public void ChangeToPlayer()
+    {
+        onChangeToPlayer?.Invoke();
+        ChangeState(GameState.Gameplay);
+        RogueLikeMode();
+        Time.timeScale = 1f; // Resume the game time
+        Debug.Log("Switched back to Player State");
+        bigKaiju.SetActive(false); // Hide the big kaiju when switching back to gameplay state
+    }
+
+    void DisableRoguelikeScreens()
+    {
+        pauseScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
+        inventory.SetActive(false);
+        xpBar.SetActive(false);
+    }
+
+    void RogueLikeMode()
+    {
+        DisableBoardScreens();
+        inventory.SetActive(true);
+        xpBar.SetActive(true);
+        playerObject.SetActive(true); // Show the player object when switching back to gameplay state
+        enemySpawner.SetActive(true); // Show the enemy spawner when switching back to gameplay state
+        currentState = GameState.Gameplay;
+        Time.timeScale = 1f; // Ensure the game time is running
+        Debug.Log("RogueLike Mode Activated");
+    }
+
+    void DisableBoardScreens()
+    {
+        boardScreen.SetActive(false);
+    }
+
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
+        boardScreen.SetActive(false);
     }
 
     public void GameOver()
     {
+        onChangeToPlayer?.Invoke();
+        DisableBoardScreens();
         timeSurvivedDisplay.text = stopwatchDisplay.text; // Assign the stopwatch time to the results display
         ChangeState(GameState.GameOver);
     }

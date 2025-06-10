@@ -28,11 +28,11 @@ public class GridManager : MonoBehaviour
                 Tile spawnedTile;
                 if (y % 2 == 0)
                 {
-                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - 0.5f - _width / 2, y - _height / 1.5f), Quaternion.identity);
+                    spawnedTile = Instantiate(_tilePrefab, new Vector3(transform.position.x + x - 0.5f - _width / 2, transform.position.y + y - _height / 1.5f), Quaternion.identity);
                 }
                 else
                 {
-                    spawnedTile = Instantiate(_tilePrefab, new Vector3(x - _width / 2, y - _height / 1.5f), Quaternion.identity);
+                    spawnedTile = Instantiate(_tilePrefab, new Vector3(transform.position.x + x - _width / 2, transform.position.y + y - _height / 1.5f), Quaternion.identity);
                 }
 
                 spawnedTile.name = $"Tile {x} {y}";

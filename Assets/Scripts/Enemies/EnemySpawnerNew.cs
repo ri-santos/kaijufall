@@ -105,7 +105,8 @@ public class EnemySpawnerNew : MonoBehaviour
                         return;
                     }
 
-                    Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
+                    GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
+                    enemy.transform.SetParent(transform); // Set the parent to the spawner for organization
 
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;

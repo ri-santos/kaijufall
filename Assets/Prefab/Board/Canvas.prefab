@@ -303,9 +303,9 @@ MonoBehaviour:
   cards:
   - {fileID: 7784792651390477093}
   - {fileID: 8443988420485743612}
-  - {fileID: 1287112533912629018}
-  - {fileID: 1694256902837806848}
-  - {fileID: 4934959810046597217}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &5171449678022910312
 MonoBehaviour:
   m_ObjectHideFlags: 0
