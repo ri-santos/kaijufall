@@ -12,8 +12,8 @@ public class EnemyScriptableObject : ScriptableObject
     public string EnemyName { get => enemyName; private set => enemyName = value; }
 
     [SerializeField]
-    private int speed;
-    public int Speed { get => speed; private set => speed = value; }
+    private float speed;
+    public float Speed { get => speed; private set => speed = value; }
 
     [SerializeField]
     private int health;

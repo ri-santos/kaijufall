@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb316808c9087234c9e073dced45a797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: dac7e3d923c552a49852d8c84996992c, type: 2}
+  weaponData: {fileID: 11400000, guid: 4b00bab3b79d7644f9f4725976bcb1bc, type: 2}
   destroyAfterSeconds: 2
 --- !u!58 &-5722949016348396298
 CircleCollider2D:

@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1601508052474491767}
   - component: {fileID: 4559696842110343641}
   - component: {fileID: 2428183729723240127}
+  - component: {fileID: -2292409901866817082}
+  - component: {fileID: 332801783959546990}
   m_Layer: 0
   m_Name: PlayerKaiju
-  m_TagString: Untagged
+  m_TagString: PlayerKaiju
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,9 +77,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1293849753
+  m_SortingLayer: 3
+  m_SortingOrder: 20
   m_Sprite: {fileID: 6257046027232108077, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,9 +144,37 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482216451476195916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed2af22f746ebb4690170ca4d94ead6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerKaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
+--- !u!114 &-2292409901866817082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482216451476195916}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7493f3d55c1b14eb40427951aa1443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: c35e1273b13af834883a4f204a521551, type: 2}
+  attackPoint: {fileID: 0}
+--- !u!114 &332801783959546990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482216451476195916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508a78d74b201ce498742aa8e805b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: f719a4c35234cae42830d3f03c8f1527, type: 2}
+  invincibilityDuration: 0

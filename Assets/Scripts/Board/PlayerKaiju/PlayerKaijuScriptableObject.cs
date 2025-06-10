@@ -12,16 +12,16 @@ public class PlayerKaijuScriptableObject : ScriptableObject
     public string KaijuName { get => kaijuName; private set => kaijuName = value; }
 
     [SerializeField]
-    private int speed;
-    public int Speed { get => speed; private set => speed = value; }
+    private float speed;
+    public float Speed { get => speed; private set => speed = value; }
 
     [SerializeField]
     private int health;
     public int Health { get => health; private set => health = value; }
 
     [SerializeField]
-    private int damage;
-    public int Damage { get => damage; private set => damage = value; }
+    private float damage;
+    public float Damage { get => damage; private set => damage = value; }
 
     [SerializeField]
     private float attackCooldown;
