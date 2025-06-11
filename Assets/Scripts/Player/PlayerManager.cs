@@ -295,7 +295,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void UpdateHealthBar()
+     public void UpdateHealthBar()
     {
         //Update the health bar
         healthBar.fillAmount = currentHealth / characterData.MaxHealth;
