@@ -33,6 +33,7 @@ public class EnemySpawnerNew : MonoBehaviour
     public int maxEnemiesAllowed;
     public bool maxEnemiesReached;
     public float waveInterval;
+    bool isWaveActive = false;
 
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints;
@@ -53,7 +54,7 @@ public class EnemySpawnerNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0)
+        if(currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
         {
             StartCoroutine(BeginNextWave());
         }
@@ -69,10 +70,15 @@ public class EnemySpawnerNew : MonoBehaviour
 
     IEnumerator BeginNextWave()
     {
+        isWaveActive = true;
+
+        //wave for 'waveInterval' seconds before starting the next wave
         yield return new WaitForSeconds(waveInterval);
 
+        //if there are more waves art the next wave
         if (currentWaveCount < waves.Count - 1)
-        { 
+        {
+            isWaveActive = false;
             currentWaveCount++;
             CalculateWaveQuota();
         }
@@ -92,37 +98,39 @@ public class EnemySpawnerNew : MonoBehaviour
 
     void SpawnEnemies()
     {
+        //Check if the minimum number of enemies for the current wave has been reached
         if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
         {
             foreach(var enemyGroup in waves[currentWaveCount].enemyGroups)
             {
                 if(enemyGroup.spawnCount < enemyGroup.enemyCount)
                 {
-
-                    if(enemiesAlive >= maxEnemiesAllowed)
-                    {
-                        maxEnemiesReached = true;
-                        return;
-                    }
-
                     GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
                     enemy.transform.SetParent(transform); // Set the parent to the spawner for organization
 
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
                     enemiesAlive++;
+
+                    if (enemiesAlive >= maxEnemiesAllowed)
+                    {
+                        maxEnemiesReached = true;
+                        return;
+                    }
                 }
             }
-        }
-
-        if(enemiesAlive < maxEnemiesAllowed)
-        {
-            maxEnemiesReached = false;
         }
     }
 
     public void OnEnemyKilled()
     {
+        // Decrease the count of enemies alive and update the wave's spawn count
         enemiesAlive--;
+
+        //reset the maxEnemiesReached flag if the number of alive enemies is less than the allowed maximum
+        if (enemiesAlive < maxEnemiesAllowed)
+        {
+            maxEnemiesReached = false;
+        }
     }
 }
