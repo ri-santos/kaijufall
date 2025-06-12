@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CardUI : MonoBehaviour
 {
     public Image cardImage;
-    public Text cardName;
+    public TMPro.TMP_Text cardName;
     private Sprite cardBackground;
     public Sprite bgNotClicked;
     public Sprite bgClicked;

@@ -1,11 +1,20 @@
 using UnityEngine;
 
-public class HealthPack : PickUp, ICollectible
+public class HealthPack : PickUp
 {
     public int healthVal;
-    public void Collect()
+    public override void Collect()
     {
-        PlayerManager player = FindAnyObjectByType<PlayerManager>();
+        if(hasBeenCollected)
+        {
+            return;
+        }
+        else
+        {
+            base.Collect();
+        }
+            PlayerManager player = FindAnyObjectByType<PlayerManager>();
         player.RestoreHealth(healthVal);
+        player.UpdateHealthBar();
     }
 }
