@@ -14,7 +14,7 @@ public class PickUp : MonoBehaviour, ICollectible
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject);
         }
     }
 }
