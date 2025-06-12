@@ -20,6 +20,10 @@ public class PlayerManager : MonoBehaviour
     float currentMagnet;
 
     #region Current Stats Properties
+
+    public ParticleSystem damageEffect; // Particle effect for damage feedback
+
+
     public float CurrentHealth
     {
         get { return currentHealth; }
@@ -284,6 +288,9 @@ public class PlayerManager : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
+
+            if(damageEffect) Instantiate(damageEffect, transform.position, Quaternion.identity);
+
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
             if (CurrentHealth <= 0)

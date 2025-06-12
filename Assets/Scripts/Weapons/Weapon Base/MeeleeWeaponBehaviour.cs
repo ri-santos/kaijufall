@@ -38,7 +38,7 @@ public class MeeleeWeaponBehaviour : MonoBehaviour
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(GetCurrentDamage());
+                enemyStats.TakeDamage(GetCurrentDamage(), transform.position);
             }
         }
         else if (collision.CompareTag("Prop"))

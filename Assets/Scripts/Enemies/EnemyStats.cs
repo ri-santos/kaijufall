@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
@@ -17,6 +19,14 @@ public class EnemyStats : MonoBehaviour
     public float despawnDistance = 20f;
     Transform player;
 
+    [Header("Damage Feedback")]
+    public Color damageColor = new Color(1,0,0,1); //what color to flash when taking damage
+    public float damageFlashDuration = 0.2f; // how long to flash the damage color
+    public float deathFadeTime = 0.6f; // how long to fade out the enemy on death
+    Color originalColor; // the original color of the enemy sprite
+    SpriteRenderer sr;
+    EnemyMovement movement;
+
     private void Awake()
     {
         currentSpeed = enemyData.Speed;
@@ -28,6 +38,10 @@ public class EnemyStats : MonoBehaviour
     private void Start()
     {
         player = FindAnyObjectByType<Player>().transform;
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color; // Store the original color of the sprite
+
+        movement = GetComponent<EnemyMovement>();
 
     }
 
@@ -39,20 +53,54 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
     {
         currentHealth -= damage;
-        Debug.Log("Current Health: " + currentHealth);
+        StartCoroutine(DamageFlash()); // Start the damage flash coroutine
+
+        if(knockbackForce > 0)
+        {
+            //gets the direction of the knockback
+            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            movement.Knockback(dir.normalized * knockbackForce, knockbackDuration); // Apply knockback to the enemy
+        }
+        //Debug.Log("Current Health: " + currentHealth);
         if (currentHealth <= 0)
         {
             Kill();
         }
     }
 
+    //coroutine to flash the enemy sprite when it takes damage
+
+    IEnumerator DamageFlash()
+    {
+        sr.color = damageColor; // Change the sprite color to the damage color
+        yield return new WaitForSeconds(damageFlashDuration); // Wait for the specified duration
+        sr.color = originalColor; // Restore the original color
+    }
+
     public void Kill()
     {
 
-        Destroy(gameObject);
+        StartCoroutine(KillFade());
+    }
+
+    // Coroutine to fade out the enemy sprite on death
+    IEnumerator KillFade()
+    {
+        WaitForEndOfFrame w = new WaitForEndOfFrame();
+        float t = 0, origAlpha = sr.color.a;
+
+        while(t<deathFadeTime)
+        {
+            yield return w;
+            t += Time.deltaTime;
+
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (1 -t / deathFadeTime) * origAlpha);
+        }
+
+        Destroy(gameObject); // Destroy the enemy object after fading out
     }
 
     private void OnCollisionStay2D(Collision2D collision)

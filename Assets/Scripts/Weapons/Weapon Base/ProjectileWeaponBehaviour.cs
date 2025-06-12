@@ -50,7 +50,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         {
 
             EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
-            enemyStats.TakeDamage(GetCurrentDamage());
+            enemyStats.TakeDamage(GetCurrentDamage(), transform.position);
             playerManager.AddMoney(enemyStats.reward);
             //Destroy(gameObject);
             ReducePierce();

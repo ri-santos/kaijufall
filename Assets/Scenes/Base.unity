@@ -144,6 +144,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6049389736101723131, guid: 473d4bc5ff4eadd4aa400eeb9dc38a82, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 5462493453480871265, guid: f5e1ba0b8669c354c9cb6be298be752f, type: 3}
+    - target: {fileID: -6049389736101723131, guid: 473d4bc5ff4eadd4aa400eeb9dc38a82, type: 3}
       propertyPath: passiveItemIndex
       value: 0
       objectReference: {fileID: 0}
@@ -1565,10 +1569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6964,7 +6968,7 @@ PrefabInstance:
     - target: {fileID: 764136111521065315, guid: 8bb5d5796d415784c82f320e9c3beb2b, type: 3}
       propertyPath: xpBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1642583989}
     - target: {fileID: 764136111521065315, guid: 8bb5d5796d415784c82f320e9c3beb2b, type: 3}
       propertyPath: bigKaiju
       value: 
