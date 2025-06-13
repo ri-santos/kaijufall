@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6180,7 +6180,7 @@ PrefabInstance:
     - {fileID: 5289064925609710740, guid: 90b4ac7831f92cd41b0e595bdda19f16, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1464250900638910535, guid: 90b4ac7831f92cd41b0e595bdda19f16, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 365487537}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 577124258068742439, guid: 90b4ac7831f92cd41b0e595bdda19f16, type: 3}

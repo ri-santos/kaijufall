@@ -47,6 +47,11 @@ public class EnemyStats : MonoBehaviour
 
     private void Update()
     {
+        Player target = FindAnyObjectByType<Player>();
+        if (target == null) return; // If no player is found, exit the update
+        
+        player = target.transform;
+        
         if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
         {
             ReturnEnemy();

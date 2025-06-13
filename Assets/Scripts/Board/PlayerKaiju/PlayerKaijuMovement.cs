@@ -17,7 +17,7 @@ public class PlayerKaijuMovement : MonoBehaviour
     void Update()
     {
         target = attackController.Target;
-        if (!attackController.InRange)
+        if (!attackController.InRange && target != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, playerKaijuData.Speed * Time.deltaTime);
         }

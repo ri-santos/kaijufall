@@ -10,6 +10,7 @@ public class PlayerKaijuAttackController : MonoBehaviour
     protected float currentAttackCooldown;
     protected GameObject target; // Changed to GameObject for flexibility
     public GameObject Target => target; // Public property to access target
+    protected BoardEnemyStats[] availableTargets => FindObjectsByType<BoardEnemyStats>(FindObjectsSortMode.None); // Updated to non-obsolete method
     protected BoardEnemyStats smallKaijuTarget;
     protected BigKaiju bigKaijuTarget;
     protected int targetType; // 0 for small kaiju, 1 for big kaiju
@@ -32,8 +33,30 @@ public class PlayerKaijuAttackController : MonoBehaviour
 
     protected virtual void Update()
     {
-        smallKaijuTarget = FindFirstObjectByType<BoardEnemyStats>(); // Updated to non-obsolete method
-        target = smallKaijuTarget != null ? smallKaijuTarget.gameObject : bigKaijuTarget?.gameObject;
+        smallKaijuTarget = null; // Reset small kaiju target each frame
+        if (availableTargets.Length > 0)
+        {
+            float closestDistance = Vector2.Distance(transform.position, availableTargets[0].transform.position);
+
+            foreach (BoardEnemyStats enemy in availableTargets)
+            {
+                float currentDistance = Vector2.Distance(transform.position, enemy.transform.position);
+                if (smallKaijuTarget == null || currentDistance < closestDistance)
+                {
+                    smallKaijuTarget = enemy;
+                    targetType = 0; // Small Kaiju
+                    closestDistance = currentDistance;
+                }
+            }
+        }
+
+        target = smallKaijuTarget != null ? smallKaijuTarget.gameObject : (bigKaijuTarget?.gameObject != null ? bigKaijuTarget.gameObject : null);
+
+        if (target == null)
+        {
+            inRange = false;
+            return; // No target found, exit early
+        }
 
         float distance = Vector2.Distance(transform.position, target.transform.position);
 

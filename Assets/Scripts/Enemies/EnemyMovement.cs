@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
+            if (target == null) return;
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, enemy.currentSpeed * Time.deltaTime);
         }
     }
