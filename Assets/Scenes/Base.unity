@@ -15397,6 +15397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 615246988}
     - target: {fileID: 764136111521065315, guid: 8bb5d5796d415784c82f320e9c3beb2b, type: 3}
+      propertyPath: damageTextCanvas
+      value: 
+      objectReference: {fileID: 561753960}
+    - target: {fileID: 764136111521065315, guid: 8bb5d5796d415784c82f320e9c3beb2b, type: 3}
       propertyPath: stopwatchDisplay
       value: 
       objectReference: {fileID: 1009420435}

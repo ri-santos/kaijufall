@@ -289,7 +289,9 @@ public class PlayerManager : MonoBehaviour
         {
             CurrentHealth -= dmg;
 
-            if(damageEffect) Instantiate(damageEffect, transform.position, Quaternion.identity);
+            if (dmg > 0) GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+
+            if (damageEffect) Instantiate(damageEffect, transform.position, Quaternion.identity);
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
