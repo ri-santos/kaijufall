@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.45968354, y: -3.6911514, z: 0}
-  m_LocalScale: {x: 2.96, y: 2.96, z: 2.96}
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -164,7 +164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
   reward: 0
-  invincibilityDuration: 0
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6
 --- !u!114 &-5336708540869514923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +181,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kaijuData: {fileID: 11400000, guid: 5b4cf975535647b44b6af09310d60c67, type: 2}
   attackPoint: {fileID: 0}
-  attackRadius: 1

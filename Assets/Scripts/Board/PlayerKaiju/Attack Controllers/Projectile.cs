@@ -41,7 +41,7 @@ public class Projectile : MonoBehaviour
     {
         float lookAngle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
         direction = (targetPos - transform.position).normalized;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, lookAngle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, lookAngle - 45));
         targetTag = tag;
     }
 

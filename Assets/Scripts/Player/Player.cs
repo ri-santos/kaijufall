@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     Vector2 moveDir;
 
+    Vector2 dodgeVelocity;
+    float dodgeDuration;
+
     private void Awake()
     {
         //inputActions = new InputManager();
@@ -39,6 +42,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         InputManagement();
+        if (dodgeDuration > 0)
+        {
+            transform.position += (Vector3)dodgeVelocity * Time.deltaTime;
+            dodgeDuration -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -66,6 +74,13 @@ public class Player : MonoBehaviour
         if(moveDir.y != 0)
         {
             lastVerticalVector = moveDir.y;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            dodgeDuration = 0.2f;
+            player.Dodge(dodgeDuration);
+            dodgeVelocity = (new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed)).normalized * 7f;
         }
     }
 

@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class BoardEnemyProjectile : MonoBehaviour
+public class BigKaijuSmallProjectile : MonoBehaviour
 {
     private float damage;
     private Vector2 direction;
-    private float speed = 10f;
+    public float speed = 15f;
     private float range;
     private float distanceTraveled = 0f;
 
     [SerializeField] private TrailRenderer trail;
 
     Rigidbody2D rb;
-    public EnemyScriptableObject kaijuData;
+    public BigKaijuScriptableObject kaijuData;
 
     [Header("Visuals")]
     [SerializeField] private GameObject impactEffect;
@@ -38,8 +38,8 @@ public class BoardEnemyProjectile : MonoBehaviour
 
     public void DirectionChecker(Vector3 targetPos)
     {
-        float lookAngle = Mathf.Atan2(targetPos.y - transform.position.y, targetPos.x - transform.position.x) * Mathf.Rad2Deg;
-        direction = (targetPos - transform.position).normalized;
+        float lookAngle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
+        direction = targetPos.normalized;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, lookAngle - 45));
     }
 
@@ -48,13 +48,10 @@ public class BoardEnemyProjectile : MonoBehaviour
         if (collision.CompareTag("PlayerKaiju"))
         {
             collision.GetComponent<PlayerKaijuStats>().TakeDamage(damage);
-            Destroy(gameObject);
         }
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerManager>().TakeDamage(damage);
-            Destroy(gameObject);
         }
     }
-
 }

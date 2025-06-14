@@ -17,7 +17,7 @@ public class BoardEnemyMovement : MonoBehaviour
     {
         target = attackController.Target;
 
-        if(!attackController.InRange)
+        if(target != null && !attackController.InRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, enemyData.Speed * Time.deltaTime);
         }

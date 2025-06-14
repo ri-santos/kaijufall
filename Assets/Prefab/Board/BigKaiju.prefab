@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2685475888370097442}
   - component: {fileID: 3444420767235195458}
-  - component: {fileID: 4619809580559043962}
   - component: {fileID: -7207104476372334282}
+  - component: {fileID: 4619809580559043962}
+  - component: {fileID: -7749888830052247713}
+  - component: {fileID: 289044917456214696}
+  - component: {fileID: -8525170933330621818}
   m_Layer: 0
   m_Name: BigKaiju
   m_TagString: BigKaiju
@@ -89,23 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4619809580559043962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3140109445444900796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c07452081e70734e907f41bc2eed179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
-  rangeNumEnemies: 2
-  enemies:
-  - {fileID: 3700512497031387890, guid: b33af0762f2ffaf46b5e0b6d3ec247a1, type: 3}
-  - {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
 --- !u!50 &-7207104476372334282
 Rigidbody2D:
   serializedVersion: 5
@@ -133,3 +119,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4619809580559043962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140109445444900796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c07452081e70734e907f41bc2eed179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpDisplay: {fileID: 0}
+  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
+  rangeNumEnemies: 2
+  enemies:
+  - {fileID: 3700512497031387890, guid: b33af0762f2ffaf46b5e0b6d3ec247a1, type: 3}
+  - {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
+--- !u!114 &-7749888830052247713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140109445444900796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c36c9ced727e646acd485bbddda458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 0}
+--- !u!114 &289044917456214696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140109445444900796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e5b0f94c945f94f805e40245d67664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
+  attackPoint: {fileID: 2685475888370097442}
+  attackRadius: 10
+  smallProjectile: {fileID: 1740148411876219461, guid: 0ccfa52f1d6078742a6553ea9137e013, type: 3}
+  attackPrefab2: {fileID: 0}
+--- !u!114 &-8525170933330621818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140109445444900796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f01cf808eaf924496bcdff6b5e2ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kaijuData: {fileID: 11400000, guid: fce4ee9a05ca9f741874a376875ef1b1, type: 2}
+  attackPoint: {fileID: 2685475888370097442}
+  attackRadius: 10
+  smallProjectile: {fileID: 1740148411876219461, guid: 0ccfa52f1d6078742a6553ea9137e013, type: 3}
+  attackPrefab2: {fileID: 0}
+  player: {fileID: 0}

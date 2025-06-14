@@ -47,41 +47,41 @@ public class PlayerKaijuStats : MonoBehaviour
         currentHealth -= dmg;
         //invincibilityTimer = invincibilityDuration;
         //isInvincible = true;
-        StartCoroutine(DamageFlash()); // Start the damage flash coroutine
+        //StartCoroutine(DamageFlash()); // Start the damage flash coroutine
         if (currentHealth <= 0)
         {
             Kill();
         }
     }
 
-    IEnumerator DamageFlash()
-    {
-        sr.color = damageColor; // Change the sprite color to the damage color
-        yield return new WaitForSeconds(damageFlashDuration); // Wait for the specified duration
-        sr.color = originalColor; // Restore the original color
-    }
+    //IEnumerator DamageFlash()
+    //{
+    //    sr.color = damageColor; // Change the sprite color to the damage color
+    //    yield return new WaitForSeconds(damageFlashDuration); // Wait for the specified duration
+    //    sr.color = originalColor; // Restore the original color
+    //}
 
     public void Kill()
     {
 
-        StartCoroutine(KillFade());
+        Destroy(gameObject); // Destroy the player kaiju object
     }
 
     // Coroutine to fade out the enemy sprite on death
-    IEnumerator KillFade()
-    {
-        WaitForEndOfFrame w = new WaitForEndOfFrame();
-        float t = 0, origAlpha = sr.color.a;
+    //IEnumerator KillFade()
+    //{
+    //    WaitForEndOfFrame w = new WaitForEndOfFrame();
+    //    float t = 0, origAlpha = sr.color.a;
 
-        while (t < deathFadeTime)
-        {
-            yield return w;
-            t += Time.deltaTime;
+    //    while (t < deathFadeTime)
+    //    {
+    //        yield return w;
+    //        t += Time.deltaTime;
 
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (1 - t / deathFadeTime) * origAlpha);
-        }
+    //        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (1 - t / deathFadeTime) * origAlpha);
+    //    }
 
-        Destroy(gameObject); // Destroy the enemy object after fading out
-    }
+    //    Destroy(gameObject); // Destroy the enemy object after fading out
+    //}
 
 }

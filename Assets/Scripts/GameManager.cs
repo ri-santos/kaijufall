@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         GameOver,
         LevelUp,
         Board,
+        Final,
     }
 
     //Storing the current and previous game states
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     public System.Action onChangeToBoard;
     public System.Action onChangeToPlayer;
+    public System.Action onChangeToFinal;
 
     private void Awake()
     {
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
                 CheckForPauseAndResume();
                 CheckForBoard(); // Check for board state switch
                 UpdateStopwatch(); // Update the stopwatch time
+                CheckForFinal(); // Check for final state switch
                 break;
             case GameState.Board:
                 if (bigKaiju == null)
@@ -96,6 +99,7 @@ public class GameManager : MonoBehaviour
                 }
                 CheckForPauseAndResume();
                 CheckForBoard();
+                CheckForFinal(); // Check for final state switch
                 break;
             case GameState.Paused:
                 CheckForPauseAndResume();
@@ -186,6 +190,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void CheckForFinal()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (currentState == GameState.Board || currentState == GameState.Gameplay)
+            {
+                ChangeToFinal();
+
+                Debug.Log("Switched to Final State");
+            }
+            else
+            {
+                Debug.LogWarning("Cannot switch to Final state from " + currentState);
+            }
+        }
+    }
+
     public void StartBoard()
     {
         onChangeToBoard?.Invoke();
@@ -206,6 +227,16 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; // Resume the game time
         Debug.Log("Switched back to Player State");
         bigKaiju.SetActive(false); // Hide the big kaiju when switching back to gameplay state
+    }
+
+    public void ChangeToFinal()
+    {
+        onChangeToFinal?.Invoke();
+        ChangeState(GameState.Final);
+        RogueLikeMode();
+        Time.timeScale = 1f; // Resume the game time
+        Debug.Log("Switched back to Player State");
+        bigKaiju.SetActive(true); // Hide the big kaiju when switching back to gameplay state
     }
 
     void DisableRoguelikeScreens()

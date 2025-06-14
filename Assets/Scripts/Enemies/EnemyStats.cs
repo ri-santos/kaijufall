@@ -37,7 +37,6 @@ public class EnemyStats : MonoBehaviour
 
     private void Start()
     {
-        player = FindAnyObjectByType<Player>().transform;
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color; // Store the original color of the sprite
 

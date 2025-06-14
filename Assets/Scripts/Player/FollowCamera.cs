@@ -14,6 +14,7 @@ public class FollowCamera : MonoBehaviour
         cameraTarget = playerTarget;
         GameManager.instance.onChangeToBoard += ChangeToBoardCamera;
         GameManager.instance.onChangeToPlayer += ChangeToPlayerCamera;
+        GameManager.instance.onChangeToFinal += ChangeToPlayerCamera;
     }
     // Update is called once per frame
     void Update()
@@ -25,7 +26,7 @@ public class FollowCamera : MonoBehaviour
         Debug.Log("Changing to board camera");
         cameraTarget = boardTarget;
         offset = new Vector3(0, 0, -10);
-        cameraController.orthographicSize = 10f; // Adjust the orthographic size as needed
+        cameraController.orthographicSize = 7f; // Adjust the orthographic size as needed
     }
 
     public void ChangeToPlayerCamera()

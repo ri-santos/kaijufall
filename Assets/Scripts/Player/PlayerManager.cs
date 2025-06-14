@@ -302,6 +302,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void Dodge(float dodgeDuration)
+    {
+        if (!isInvincible)
+        {
+            invincibilityTimer = dodgeDuration;
+            isInvincible = true;
+        }
+    }
+
      public void UpdateHealthBar()
     {
         //Update the health bar

@@ -15,20 +15,20 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemy = GetComponent<EnemyStats>();
-        target = FindFirstObjectByType<Player>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(knockbackDuration > 0)
+        if(knockbackDuration > 0)
         {
             transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
             knockbackDuration -= Time.deltaTime;
         }
         else
         {
-            if (target == null) return;
+            if (FindFirstObjectByType<Player>() == null) return;
+            target = FindFirstObjectByType<Player>().transform;
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, enemy.currentSpeed * Time.deltaTime);
         }
     }
