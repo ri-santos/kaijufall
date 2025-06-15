@@ -176,7 +176,7 @@ public class PlayerInventory : MonoBehaviour
             Debug.Log(string.Format("Adding {0} to player inventory at slot {1}", spawnedWeapon.name, slotNum));
             weaponSlots[slotNum].Assign(spawnedWeapon);
 
-            if (GameManager.instance != null && GameManager.instance.choosingUpgrade) GameManager.instance.EndLevelUp();
+            if (GameManager.instance != null && GameManager.instance.choosingUpgrade) { GameManager.instance.EndLevelUp(); }
 
             return slotNum;
         }

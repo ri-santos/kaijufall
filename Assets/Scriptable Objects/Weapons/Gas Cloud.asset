@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c99216a8e2b34c41a9a31dc3525abc7, type: 3}
+  m_Name: Gas Cloud
+  m_EditorClassIdentifier: 
+  icon: {fileID: -2024598522, guid: 7e889e27ac2d9d246bb702f222bdf1d1, type: 3}
+  maxLevel: 1
+  behaviour: AuraWeapon
+  baseStats:
+    name: Gas Cloud
+    description: Gas Cloud surrounds the player
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 6686607130457862731, guid: ffc958359ae03124cb3eeee330fcb3ee, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 20
+    damageVariance: 5
+    area: 1
+    speed: 0
+    cooldown: 0.5
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 50
+  linearGrowth: []
+  randomGrowth: []

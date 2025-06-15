@@ -286,6 +286,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33e2623e91b28ba44b0ebfc580686795, type: 2}
   - {fileID: 11400000, guid: 86479a3203fa0c842b25c1d98d076dc0, type: 2}
   - {fileID: 11400000, guid: 67ffb2769d97d094790fcda8b8446cc8, type: 2}
+  - {fileID: 11400000, guid: a46b2a273ad86be4785519bebf2706a8, type: 2}
   availablePassives:
   - {fileID: 11400000, guid: 8099c3078e6161e4faad2824977d8e68, type: 2}
   - {fileID: 11400000, guid: f1174b3a18e4c184690034fd853a9396, type: 2}
