@@ -23,46 +23,46 @@ MonoBehaviour:
       moveSpeed: 0
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   growth:
   - name: Nano Bots Level 2
-    description: 
+    description: Ups Regen by 10%
     boosts:
       maxHealth: 0
       recovery: 0.1
       moveSpeed: 0
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: Nano Bots Level 3
-    description: 
+    description: Ups Regen by 10%
     boosts:
       maxHealth: 0
       recovery: 0.1
       moveSpeed: 0
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: Nano Bots Level 4
-    description: 
+    description: Ups Regen by 10%
     boosts:
       maxHealth: 0
       recovery: 0.1
       moveSpeed: 0
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: Nano Bots Level 5
-    description: 
+    description: Ups Regen by 10%
     boosts:
       maxHealth: 0
       recovery: 0.1
       moveSpeed: 0
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0

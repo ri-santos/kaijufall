@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c60b8dc70faa84b8e64527b2694616, type: 3}
-  m_Name: BlueMecha
+  m_Name: GreenMecha
   m_EditorClassIdentifier: 
   icon: {fileID: -531871230, guid: 8b71259b762b97246b987e9222ab27b0, type: 3}
   name: Blue Mecha
-  startingWeapon: {fileID: 11400000, guid: d349c3b2c49a5b64dacd5b4627e7d7e8, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 86479a3203fa0c842b25c1d98d076dc0, type: 2}
   stats:
     maxHealth: 1000
     recovery: 0

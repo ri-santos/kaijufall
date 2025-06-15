@@ -23,36 +23,36 @@ MonoBehaviour:
       moveSpeed: 0
       might: 0.2
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   growth:
   - name: DMG Chip Level 2
-    description: 
+    description: Boosts damage by 20%
     boosts:
       maxHealth: 0
       recovery: 0
       moveSpeed: 0
       might: 0.2
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: DMG Chip Level 3
-    description: 
+    description: Boosts damage by 20%
     boosts:
       maxHealth: 0
       recovery: 0
       moveSpeed: 0
       might: 0.2
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: DMG Chip Level 4
-    description: 
+    description: Boosts damage by 20%
     boosts:
       maxHealth: 0
       recovery: 0
       moveSpeed: 0
       might: 0.2
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0

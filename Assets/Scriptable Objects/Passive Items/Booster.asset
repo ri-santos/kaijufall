@@ -23,36 +23,36 @@ MonoBehaviour:
       moveSpeed: 0.1
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   growth:
   - name: Booster Level 2
     description: Boost movement speed by an extra 10%
     boosts:
       maxHealth: 0
       recovery: 0
-      moveSpeed: 0.1
+      moveSpeed: 0.5
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: Booster Level 3
     description: Boost movement speed by an extra 10%
     boosts:
       maxHealth: 0
       recovery: 0
-      moveSpeed: 0.1
+      moveSpeed: 0.5
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
   - name: Booster Level 4
     description: Boost movement speed by an extra 10%
     boosts:
       maxHealth: 0
       recovery: 0
-      moveSpeed: 0.1
+      moveSpeed: 0.5
       might: 0
       speed: 0
-      magnet: 0
       souls: 0
+      magnet: 0
