@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text stopwatchDisplay;
 
     public bool isGameOver = false;
+    public bool isPaused = false;
 
     public bool choosingUpgrade;
 
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
             case GameState.LevelUp:
                 if (!choosingUpgrade)
                 {
+                    isPaused = true;
                     choosingUpgrade = true;
                     Time.timeScale = 0f; // Stop the game time
                     levelUpScreen.SetActive(true); // Show the level up screen UI
@@ -221,10 +223,12 @@ public class GameManager : MonoBehaviour
         {
             if (currentState == GameState.Paused)
             {
+                isPaused = false;
                 ResumeGame();
             }
             else
             {
+                isPaused = true;
                 PauseGame();
             }
         }
@@ -236,10 +240,12 @@ public class GameManager : MonoBehaviour
         {
             if (currentState == GameState.Gameplay)
             {
+                isPaused = true; // Pause the game when switching to board state
                 StartBoard();
             }
             else if (currentState == GameState.Board)
             {
+                isPaused = false; // Resume the game when switching back to gameplay state
                 ChangeToPlayer();
             }
             else
@@ -419,10 +425,9 @@ public class GameManager : MonoBehaviour
     public void EndLevelUp()
     {
         choosingUpgrade = false;
+        isPaused = false; // Resume gameplay after level up
         Time.timeScale = 1f; // Resume the game time
         levelUpScreen.SetActive(false); // Hide the level up screen UI
         ChangeState(GameState.Gameplay); // Change back to gameplay state
     }
-
-
 }

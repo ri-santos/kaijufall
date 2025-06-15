@@ -39,7 +39,7 @@ public class PlayerManager : MonoBehaviour
                 health = value;
                 if(GameManager.instance != null)
                 {
-                    GameManager.instance.currentHealthDisplay.text = string.Format("Health: {0}/{1}", health, actualStats.maxHealth);
+                    GameManager.instance.currentHealthDisplay.text = string.Format("Health: {0}/{1}", Mathf.RoundToInt(health), actualStats.maxHealth);
                 }
 
             }   
@@ -56,7 +56,7 @@ public class PlayerManager : MonoBehaviour
                 actualStats.maxHealth = value;
                 if(GameManager.instance != null)
                 {
-                    GameManager.instance.currentHealthDisplay.text = string.Format("Health: {0}/{1}", health, actualStats.maxHealth);
+                    GameManager.instance.currentHealthDisplay.text = string.Format("Health: {0}/{1}", Mathf.RoundToInt(health), actualStats.maxHealth);
                 }
             }
         }
@@ -273,7 +273,7 @@ public class PlayerManager : MonoBehaviour
 
         experienceCap = levelRanges[0].experienceCapIncrease;
 
-        GameManager.instance.currentHealthDisplay.text = "Health: " + CurrentHealth;
+        GameManager.instance.currentHealthDisplay.text = "Health: " + Mathf.RoundToInt(CurrentHealth);
         GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + CurrentRecovery;
         GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed: " + CurrentMoveSpeed;
         GameManager.instance.currentMightDisplay.text = "Might: " + CurrentMight;
@@ -456,14 +456,18 @@ public class PlayerManager : MonoBehaviour
 
     void Recover()
     {
-        if(CurrentHealth <= actualStats.maxHealth)
+        if (!GameManager.instance.isGameOver && !GameManager.instance.isPaused)
         {
-            CurrentHealth += CurrentRecovery * Time.deltaTime;
-            CurrentHealth += Recovery * Time.deltaTime;
-
-            if(CurrentHealth >= actualStats.maxHealth)
+            if (CurrentHealth < actualStats.maxHealth)
             {
-                CurrentHealth = actualStats.maxHealth;
+                CurrentHealth += CurrentRecovery * Time.deltaTime;
+                CurrentHealth += Recovery * Time.deltaTime;
+
+                if (CurrentHealth >= actualStats.maxHealth)
+                {
+                    Debug.Log("Health is full, no need to recover further.");
+                    CurrentHealth = actualStats.maxHealth;
+                }
             }
         }
     }
