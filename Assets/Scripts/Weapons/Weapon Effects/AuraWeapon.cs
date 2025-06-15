@@ -12,7 +12,13 @@ public class AuraWeapon : Weapon
     {
         if (currentStats.auraPrefab)
         {
-            if (currentAura) Destroy(currentAura);
+            if (currentAura)
+            {
+                Destroy(currentAura.gameObject);
+                currentAura = null;
+            }
+
+            Destroy(currentAura);
             currentAura = Instantiate(currentStats.auraPrefab, transform);
             currentAura.weapon = this;
             currentAura.owner = owner;

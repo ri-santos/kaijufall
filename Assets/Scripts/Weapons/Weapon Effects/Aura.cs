@@ -8,6 +8,7 @@ public class Aura : WeaponEffect
 
     private void Update()
     {
+
         Dictionary<EnemyStats, float> affectedTargsCopy = new Dictionary<EnemyStats, float>(affectedTargets);
 
         foreach (KeyValuePair<EnemyStats, float> pair in affectedTargsCopy)
