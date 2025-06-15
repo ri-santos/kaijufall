@@ -236,7 +236,8 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         characterData = CharacterSelector.GetData();
-        CharacterSelector.instance.DestroySingleton();
+        if (CharacterSelector.instance)
+            CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<PlayerInventory>();
         baseStats = actualStats = characterData.stats;

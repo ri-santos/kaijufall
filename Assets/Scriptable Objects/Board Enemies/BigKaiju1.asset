@@ -21,7 +21,7 @@ MonoBehaviour:
   attackRange: 20
   speed: 2
   projectileSpeed: 0
-  boardMinNumProjectiles: 1
-  boardMaxNumProjectiles: 3
+  boardMinNumProjectiles: 2
+  boardMaxNumProjectiles: 4
   finalMinNumProjectiles: 0
-  finalMaxNumProjectiles: 6
+  finalMaxNumProjectiles: 20

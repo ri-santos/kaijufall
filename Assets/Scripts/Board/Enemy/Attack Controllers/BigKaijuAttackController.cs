@@ -22,6 +22,7 @@ public class BigKaijuAttackController : MonoBehaviour
     {
         attackPoint = transform; // Use the transform if attackPoint is not set
         attackRadius = kaijuData.AttackRange; // Set attack radius from kaiju data
+        currentAttackCooldown = kaijuData.AttackCooldown; // Initialize cooldown
     } 
     
     // Update is called once per frame
