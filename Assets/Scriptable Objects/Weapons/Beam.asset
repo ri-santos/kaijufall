@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c99216a8e2b34c41a9a31dc3525abc7, type: 3}
+  m_Name: Beam
+  m_EditorClassIdentifier: 
+  icon: {fileID: -4088682321221169615, guid: aae32d6eaa071b9469552811b3daed15, type: 3}
+  maxLevel: 4
+  behaviour: ProjectileWeapon
+  baseStats:
+    name: Beam
+    description: Fires from the direction aimed at by the mouse
+    projectilePrefab: {fileID: 5467040499969515901, guid: 8656956d24b159e408c1f3a4123e912f, type: 3}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 3
+    damage: 6.5
+    damageVariance: 2
+    area: 1
+    speed: 10
+    cooldown: 1
+    projectileInterval: 0.1
+    knockback: 0.5
+    number: 1
+    piercing: 1
+    maxInstances: 70
+  linearGrowth:
+  - name: Beam Level 2
+    description: Fires 1 more Projectile
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 1
+    piercing: 0
+    maxInstances: 0
+  - name: Beam Level 3
+    description: Fires 1 more Projectile and deals 5 more damage
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 5
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 1
+    piercing: 0
+    maxInstances: 0
+  - name: Beam Level 4
+    description: Fires 1 more Projectile
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 1
+    piercing: 0
+    maxInstances: 0
+  randomGrowth: []

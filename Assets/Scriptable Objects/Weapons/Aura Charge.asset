@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c99216a8e2b34c41a9a31dc3525abc7, type: 3}
+  m_Name: Aura Charge
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 1806d68887e3de74797c7bcbaf91638a, type: 3}
+  maxLevel: 4
+  behaviour: AuraWeapon
+  baseStats:
+    name: Aura Charge
+    description: Damages Nearby Enemies
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 2380024064027148965, guid: 056c64f9776771f468898e7926b3e347, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 5
+    damageVariance: 1
+    area: 2
+    speed: 0
+    cooldown: 1.3
+    projectileInterval: 0
+    knockback: 1
+    number: 1
+    piercing: 0
+    maxInstances: 50
+  linearGrowth:
+  - name: Aura Charge Level 2
+    description: Increases Area
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 1
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Aura Charge Level 3
+    description: Increases Area
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 1
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Aura Charge Level 4
+    description: Increases Area
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 1
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  randomGrowth: []
