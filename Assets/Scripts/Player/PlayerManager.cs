@@ -218,6 +218,7 @@ public class PlayerManager : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
+    PlayerCollector collector;
     PlayerInventory inventory;
     public int weaponIndex;
     public int passiveItemIndex;
@@ -240,7 +241,9 @@ public class PlayerManager : MonoBehaviour
             CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<PlayerInventory>();
+        collector = GetComponentInChildren<PlayerCollector>();
         baseStats = actualStats = characterData.stats;
+        collector.SetRadius(actualStats.magnet);
         health = actualStats.maxHealth;
 
         if (instance != null)
@@ -314,6 +317,7 @@ public class PlayerManager : MonoBehaviour
                 actualStats += p.GetBoosts();
             }
         }
+        collector.SetRadius(actualStats.magnet);
     }
     public void IncreaseExperience(int amount)
     {
@@ -451,6 +455,8 @@ public class PlayerManager : MonoBehaviour
             {
                 CurrentHealth = actualStats.maxHealth;
             }
+
+            UpdateHealthBar();
         }
         
     }
@@ -469,6 +475,8 @@ public class PlayerManager : MonoBehaviour
                     Debug.Log("Health is full, no need to recover further.");
                     CurrentHealth = actualStats.maxHealth;
                 }
+
+                UpdateHealthBar();
             }
         }
     }

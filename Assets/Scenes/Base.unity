@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: secondPassiveItemTest
       value: 
       objectReference: {fileID: 1100590045223848697, guid: 15d2a9cd1b1d520449150af8262493ca, type: 3}
+    - target: {fileID: 4149909884574517416, guid: 473d4bc5ff4eadd4aa400eeb9dc38a82, type: 3}
+      propertyPath: pullSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6457473472616212307, guid: 473d4bc5ff4eadd4aa400eeb9dc38a82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

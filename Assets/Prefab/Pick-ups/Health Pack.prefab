@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2687503610111792621}
   - component: {fileID: 6282859122097521813}
   - component: {fileID: -3867193795686863850}
-  - component: {fileID: 5503308548044450892}
   - component: {fileID: -6490556427172310624}
-  - component: {fileID: -3211367341417668178}
+  - component: {fileID: 8426094313629511653}
   m_Layer: 0
   m_Name: Health Pack
   m_TagString: Untagged
@@ -137,19 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6875, y: 0.6875}
   m_EdgeRadius: 0
---- !u!114 &5503308548044450892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006482650517418941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120a83936e7d261479efef3e80c3adba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthVal: 10
 --- !u!50 &-6490556427172310624
 Rigidbody2D:
   serializedVersion: 5
@@ -177,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3211367341417668178
+--- !u!114 &8426094313629511653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,9 +172,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8006482650517418941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e83e97033def34a9753fbd241899fd, type: 3}
+  m_Script: {fileID: 11500000, guid: e515b9fb6091c5847be8a0f84fe0f67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 3
-  magnitude: 0.1
-  direction: {x: 0, y: 1, z: 0}
+  lifespan: 0.5
+  experience: 0
+  money: 0
+  health: 50
+  bobbingAnimation:
+    frequency: 2
+    direction: {x: 0, y: 0.3}
