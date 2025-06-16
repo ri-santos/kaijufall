@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5336708540869514923}
   m_Layer: 0
   m_Name: EnemyKaijuBoard
-  m_TagString: Enemy
+  m_TagString: BoardEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

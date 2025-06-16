@@ -59,6 +59,15 @@ public class GridManager : MonoBehaviour
         foreach (var tile in _tiles.Values)
         {
             tile.gameObject.SetActive(false);
+            tile.setOccupied(false);
+        }
+    }
+
+    public void RestartBoard()
+    {
+        foreach (var tile in _tiles.Values)
+        {
+            tile.gameObject.SetActive(true);
         }
     }
 }

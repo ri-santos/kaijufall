@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Prop
   - BigKaiju
+  - PlayerKaiju
+  - BoardEnemy
   layers:
   - Default
   - TransparentFX

@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public GameObject boardScreen;
     public GameObject inventory;
     public GameObject xpBar;
+    public GameObject nextPhase;
 
 
     //current stats display
@@ -71,6 +72,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerObject;
     public GameObject enemySpawner;
     public GameObject bigKaiju;
+    public GameObject fightButton;
+    public GridManager gridManager;
 
     public System.Action onChangeToBoard;
     public System.Action onChangeToPlayer;
@@ -280,11 +283,18 @@ public class GameManager : MonoBehaviour
 
     public void StartBoard()
     {
+        nextPhase.SetActive(false); // Hide the next phase UI
+        Time.timeScale = 1f; // Pause the game time
         numBoardPhases++; // Increment the number of board phases
+
         onChangeToBoard?.Invoke();
         ChangeState(GameState.Board);
+
         DisableRoguelikeScreens();
         boardScreen.SetActive(true);
+        gridManager.RestartBoard(); // Reset the grid for the new board phase
+        fightButton.SetActive(true); // Show the fight button when starting the board phase
+
         Debug.Log("Board State Started");
         playerObject.SetActive(false); // Hide the player object when switching to board state
         //enemySpawner.SetActive(false);
@@ -298,6 +308,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeToPlayer()
     {
+        KillBoardKaijus();
+        nextPhase.SetActive(false); // Hide the next phase UI
         boardStarted = false; // Reset the flag when switching back to gameplay state
         onChangeToPlayer?.Invoke();
         ChangeState(GameState.Gameplay);
@@ -309,6 +321,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeToFinal()
     {
+        KillBoardKaijus();
+        nextPhase.SetActive(false); // Hide the next phase UI
         onChangeToFinal?.Invoke();
         ChangeState(GameState.Final);
         RogueLikeMode();
@@ -333,14 +347,12 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No PlayerKaiju found. Ending board phase.");
             if (numBoardPhases < 2)
             {
-                KillBoardKaijus(); // Kill all board kaijus if no PlayerKaiju is found
-                ChangeToPlayer(); // Switch back to gameplay state if no PlayerKaiju is found
+                NextPhase(); // Switch back to gameplay state if no PlayerKaiju is found
                 boardStarted = false; // Reset the flag when switching back to gameplay state
             }
             else
             {
-                KillBoardKaijus(); // Kill all board kaijus if no PlayerKaiju is found
-                ChangeToFinal(); // If more than one board phase, end the game
+                NextPhase(); // If more than one board phase, end the game
                 boardStarted = false; // Reset the flag when switching to final state
             }
         }
@@ -348,10 +360,10 @@ public class GameManager : MonoBehaviour
 
     void KillBoardKaijus()
     {
-        BoardEnemyStats[] kaijus = FindObjectsByType<BoardEnemyStats>(FindObjectsSortMode.None);
-        foreach (BoardEnemyStats kaiju in kaijus)
+        GameObject[] kaijus = GameObject.FindGameObjectsWithTag("BoardEnemy");
+        foreach (GameObject kaiju in kaijus)
         {
-            kaiju.Kill(); // Call the Kill method on each BoardEnemyKaiju
+            Destroy(kaiju); // Call the Kill method on each BoardEnemyKaiju
         }
         Debug.Log("All board kaijus have been killed.");
     }
@@ -373,12 +385,19 @@ public class GameManager : MonoBehaviour
         boardScreen.SetActive(false);
     }
 
+    void NextPhase()
+    {
+        nextPhase.SetActive(true); // Show the next phase UI
+        Time.timeScale = 0f; // Pause the game time
+    }
+
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
         boardScreen.SetActive(false);
+        nextPhase.SetActive(false);
     }
 
     public void GameOver()
@@ -446,18 +465,35 @@ public class GameManager : MonoBehaviour
 
         UpdateStopwatchDisplay(); // Update the stopwatch display
 
-        if (stopwatchTime >= timeLimit && numBoardPhases == 0)
+        if ((stopwatchTime >= timeLimit && numBoardPhases == 0) || (stopwatchTime >= timeLimit2 && numBoardPhases == 1))
         {
-            StartBoard();
-        }
-
-        if (stopwatchTime >= timeLimit2 && numBoardPhases == 1)
-        {
-            StartBoard(); // Automatically switch to final state after the second time limit
+            NextPhase();
         }
     }
 
-    void UpdateStopwatchDisplay()
+    public void TransitionPhase()
+    {
+        if (currentState == GameState.Gameplay && numBoardPhases == 0)
+        {
+            StartBoard();
+        }
+        else if (currentState == GameState.Board && numBoardPhases == 1)
+        {
+            KillBoardKaijus(); // Kill all board kaijus if transitioning from board phase to gameplay phase
+            ChangeToPlayer();
+        }
+        else if (currentState == GameState.Gameplay && numBoardPhases == 1)
+        {
+            StartBoard(); // End the game if more than one board phase has been completed
+        }
+        else
+        {
+            KillBoardKaijus(); // Kill all board kaijus if transitioning from gameplay phase to final phase
+            ChangeToFinal(); // End the game if no valid transition is found
+        }
+    }
+
+        void UpdateStopwatchDisplay()
     {
         int minutes = Mathf.FloorToInt(stopwatchTime / 60);
         int seconds = Mathf.FloorToInt(stopwatchTime % 60);
