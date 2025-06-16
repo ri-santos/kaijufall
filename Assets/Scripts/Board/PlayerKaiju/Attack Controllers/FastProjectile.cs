@@ -12,7 +12,8 @@ public class FastProjectile : Projectile
     {
         if (collision.CompareTag("BigKaiju") && targetTag == "BigKaiju")
         {
-            collision.GetComponent<BigKaiju>().TakeDamage(damage);
+            
+            collision.GetComponent<BigKaiju>().TakeDamage(damage, default);
         }
         if (collision.CompareTag("Enemy"))
         {

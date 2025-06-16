@@ -40,11 +40,17 @@ public class Projectiles : WeaponEffect
 
         // Fix for CS1501: Provide required arguments to FindObjectsByType
         EnemyStats[] targets = FindObjectsByType<EnemyStats>(FindObjectsSortMode.None);
+        BigKaiju bk = FindAnyObjectByType<BigKaiju>();
 
         if (targets.Length > 0)
         {
             EnemyStats selectedTarget = targets[Random.Range(0, targets.Length)];
             Vector2 difference = selectedTarget.transform.position - transform.position;
+            aimAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        }
+        else if (targets.Length < 0 && bk)
+        {
+            Vector2 difference = bk.transform.position - transform.position;
             aimAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         }
         else
@@ -70,6 +76,7 @@ public class Projectiles : WeaponEffect
     {
         EnemyStats es = other.GetComponent<EnemyStats>();
         BreakableProps p = other.GetComponent<BreakableProps>();
+        BigKaiju bk = other.GetComponent<BigKaiju>();   
 
         if (es)
         {
@@ -87,6 +94,17 @@ public class Projectiles : WeaponEffect
         else if (p)
         {
             p.Takedamage(GetDamage());
+            piercing--;
+            Weapon.Stats stats = weapon.GetStats();
+            if (stats.hitEffect)
+            {
+                Destroy(Instantiate(stats.hitEffect, transform.position, Quaternion.identity), 5f);
+            }
+        }
+        else if (bk)
+        {
+            Vector3 source = damageSource == DamageSource.owner && owner ? owner.transform.position : transform.position;
+            bk.TakeDamage(GetDamage(), source);
             piercing--;
             Weapon.Stats stats = weapon.GetStats();
             if (stats.hitEffect)

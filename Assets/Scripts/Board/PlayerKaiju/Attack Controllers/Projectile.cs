@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("BigKaiju") && targetTag == "BigKaiju")
         {
-            collision.GetComponent<BigKaiju>().TakeDamage(damage);
+            collision.GetComponent<BigKaiju>().TakeDamage(damage, default);
             Destroy(gameObject);
         }
         if (collision.CompareTag("Enemy"))

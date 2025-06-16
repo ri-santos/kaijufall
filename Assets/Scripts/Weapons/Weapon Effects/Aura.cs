@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class Aura : WeaponEffect
 {
-   Dictionary<EnemyStats, float> affectedTargets = new Dictionary<EnemyStats, float>();
-   List<EnemyStats> targetsToUnaffect = new List<EnemyStats>();
+    Dictionary<IDamageable, float> affectedTargets = new Dictionary<IDamageable, float>();
+    List<IDamageable> targetsToUnaffect = new List<IDamageable>();
 
     private void Update()
     {
+        var affectedTargsCopy = new Dictionary<IDamageable, float>(affectedTargets);
 
-        Dictionary<EnemyStats, float> affectedTargsCopy = new Dictionary<EnemyStats, float>(affectedTargets);
-
-        foreach (KeyValuePair<EnemyStats, float> pair in affectedTargsCopy)
+        foreach (var pair in affectedTargsCopy)
         {
             affectedTargets[pair.Key] -= Time.deltaTime;
+
             if (pair.Value <= 0)
             {
                 if (targetsToUnaffect.Contains(pair.Key))
@@ -33,29 +33,26 @@ public class Aura : WeaponEffect
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out EnemyStats es))
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
-            if (!affectedTargets.ContainsKey(es))
+            if (!affectedTargets.ContainsKey(damageable))
             {
-                affectedTargets.Add(es,0);
+                affectedTargets.Add(damageable, 0);
             }
-            else
+            else if (targetsToUnaffect.Contains(damageable))
             {
-                if (targetsToUnaffect.Contains(es))
-                {
-                    targetsToUnaffect.Remove(es);
-                }
+                targetsToUnaffect.Remove(damageable);
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent(out EnemyStats es))
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
-            if (affectedTargets.ContainsKey(es))
+            if (affectedTargets.ContainsKey(damageable))
             {
-                targetsToUnaffect.Add(es);
+                targetsToUnaffect.Add(damageable);
             }
         }
     }

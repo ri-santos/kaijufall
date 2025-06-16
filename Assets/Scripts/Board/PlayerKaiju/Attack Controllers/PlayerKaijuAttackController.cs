@@ -78,7 +78,7 @@ public class PlayerKaijuAttackController : MonoBehaviour
     protected virtual void AttackBig()
     {
         // Apply damage
-        bigKaijuTarget.TakeDamage(kaijuData.Damage);
+        bigKaijuTarget.TakeDamage(kaijuData.Damage,default);
         // Visual feedback
         Debug.Log($"{kaijuData.KaijuName} attacked Big Kaiju! Damage: {kaijuData.Damage}");
         // Cooldown
