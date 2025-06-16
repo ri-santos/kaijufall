@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         {
             dodgeDuration = 0.2f;
             player.Dodge(dodgeDuration);
-            dodgeVelocity = (new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed)).normalized * 7f;
+            dodgeVelocity = (new Vector2(moveDir.x * player.Stats.moveSpeed, moveDir.y * player.Stats.moveSpeed)).normalized * 7f;
         }
     }
 
@@ -101,7 +101,8 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        rb.linearVelocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * player.Stats.moveSpeed, moveDir.y * player.Stats.moveSpeed);
+        //rb.linearVelocity = moveDir * DEFAULT_MOVESPEED * player.Stats.moveSpeed;
     }
 
 
