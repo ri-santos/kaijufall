@@ -8,6 +8,11 @@ public abstract class Item : MonoBehaviour
 
     protected PlayerManager owner;
 
+    public PlayerManager Owner
+    {
+        get { return owner; }
+    }
+
     public virtual void Initialise(ItemData data)
     {
         maxLevel = data.maxLevel;

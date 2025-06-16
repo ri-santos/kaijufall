@@ -46,7 +46,7 @@ public class CharacterData : ScriptableObject
             s1.might += s2.might;
             s1.speed += s2.speed;
             s1.magnet += s2.magnet;
-            s1.souls += s2.souls;
+            //s1.souls += s2.souls;
             s1.area += s2.area;
             s1.cooldown += s2.cooldown;
             return s1;

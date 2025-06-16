@@ -7,11 +7,20 @@ public class UIStatsDisplay : MonoBehaviour
 {
     public PlayerManager player;
     TextMeshProUGUI statNames, statValues;
+    public bool updateInEditor = true;
+    public bool displayCurrentHealth = false;
 
     private void OnEnable()
     {
         UpdateStatFields();
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (updateInEditor) UpdateStatFields();
+    }
+
+
 
     public void UpdateStatFields()
     {
@@ -22,6 +31,12 @@ public class UIStatsDisplay : MonoBehaviour
 
         StringBuilder names = new StringBuilder();
         StringBuilder values = new StringBuilder();
+
+        if (displayCurrentHealth)
+        {
+            names.AppendLine("Health");
+            values.AppendLine(player.CurrentHealth.ToString()); // Display health as an integer
+        }
         FieldInfo[] fields = typeof(CharacterData.Stats).GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (FieldInfo field in fields)
         {
@@ -54,8 +69,41 @@ public class UIStatsDisplay : MonoBehaviour
                 values.Append(fval).Append('\n');
             }
 
-            statNames.text = names.ToString();
+            statNames.text = PrettifyingNames(names);
             statValues.text = values.ToString();
         }
     }
+
+    public static string PrettifyingNames(StringBuilder input) 
+    {
+        if (input.Length <= 0) return string.Empty;
+
+        StringBuilder result = new StringBuilder();
+
+        char last = '\0';
+        for (int i = 0; i < input.Length; i++)
+        {
+            char c = input[i];
+
+            if (last == '\0' || char.IsWhiteSpace(last))
+            {
+                c = char.ToUpper(c);
+            }
+            else if (char.IsUpper(c))
+            {
+                result.Append(' ');
+            }
+            result.Append(c);
+
+            last = c;
+        }
+
+        return result.ToString();
+    }
+
+    void Reset()
+    {
+        player = FindAnyObjectByType<PlayerManager>();
+    }
+
 }

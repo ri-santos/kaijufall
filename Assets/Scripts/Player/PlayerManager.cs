@@ -163,7 +163,9 @@ public class PlayerManager : MonoBehaviour
 
     public void RecalculateStats() 
     {
+        float currentSouls = actualStats.souls; // Store current souls to avoid losing them during recalculation
         actualStats = baseStats;
+        actualStats.souls = currentSouls; // Restore souls after recalculation
         foreach (PlayerInventory.Slot s in inventory.passiveSlots)
         {
             Passive p = s.item as Passive;

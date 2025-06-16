@@ -295,6 +295,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8099c3078e6161e4faad2824977d8e68, type: 2}
   - {fileID: 11400000, guid: f1174b3a18e4c184690034fd853a9396, type: 2}
   - {fileID: 11400000, guid: 808117e88c51fd342bc2f97fec489bd7, type: 2}
+  - {fileID: 11400000, guid: aeaa5ead250ae9346942b29f1c5ec987, type: 2}
+  - {fileID: 11400000, guid: 975b2e60d009660408b3bb5b0cc91fe7, type: 2}
+  - {fileID: 11400000, guid: 049ad4c40ae6d0049980b05d952a9d3c, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 1001933030303807059}
     upgradeDescriptionDisplay: {fileID: 1001933030303807058}
@@ -14006,6 +14009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 56325838}
+  updateInEditor: 1
+  displayCurrentHealth: 1
 --- !u!114 &1774538394
 MonoBehaviour:
   m_ObjectHideFlags: 0

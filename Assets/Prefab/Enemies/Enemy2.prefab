@@ -186,4 +186,4 @@ MonoBehaviour:
   drops:
   - name: Soul
     itemPrefab: {fileID: 4231670219362470641, guid: 211f10fa61b57614ab2c7033b86a4916, type: 3}
-    dropRate: 80
+    dropRate: 100

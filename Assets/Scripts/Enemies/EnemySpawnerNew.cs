@@ -98,6 +98,7 @@ public class EnemySpawnerNew : MonoBehaviour
         //if there are more waves art the next wave
         if (currentWaveCount < waves.Count - 1)
         {
+            waves[currentWaveCount].spawnCount = 0; //reset the spawn count for the current wave
             isWaveActive = false;
             currentWaveCount++;
             currentWaveCount %= 2;
@@ -107,10 +108,11 @@ public class EnemySpawnerNew : MonoBehaviour
 
     IEnumerator BeginNextWaveFinal()
     {
+        isWaveActive = true;
         yield return new WaitForSeconds(waveInterval / 5);
 
         currentWaveCount = 2; // Set to the final wave index
-        isWaveActive = true;
+        isWaveActive = false;
         CalculateWaveQuota();
     }
 
@@ -129,11 +131,11 @@ public class EnemySpawnerNew : MonoBehaviour
     void SpawnEnemies()
     {
         //Check if the minimum number of enemies for the current wave has been reached
-        if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
+        if ((waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached) || (finalStateReached && !maxEnemiesReached)) 
         {
             foreach(var enemyGroup in waves[currentWaveCount].enemyGroups)
             {
-                if(enemyGroup.spawnCount < enemyGroup.enemyCount)
+                if(enemyGroup.spawnCount < enemyGroup.enemyCount || finalStateReached)
                 {
                     GameObject enemy = Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
                     enemy.transform.SetParent(transform); // Set the parent to the spawner for organization
@@ -166,6 +168,9 @@ public class EnemySpawnerNew : MonoBehaviour
 
     private void FinalState()
     {
+        isWaveActive = false;
+        currentWaveCount = 2; // Set to the final wave index
+        Debug.Log("Final state reached. Spawning final wave of enemies.");
         finalStateReached = true;
         maxEnemiesAllowed = 30; // Set a higher limit for the final state
     }

@@ -18,8 +18,10 @@ MonoBehaviour:
   stats:
     maxHealth: 1000
     recovery: 0
-    moveSpeed: 5
+    moveSpeed: 1
     might: 1
+    area: 0
     speed: 1
-    souls: 0
+    cooldown: 1
     magnet: 2
+    souls: 0

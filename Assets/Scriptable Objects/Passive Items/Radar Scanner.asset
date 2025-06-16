@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb006ad3c7252d4ab9d363c0c179aaa, type: 3}
+  m_Name: Radar Scanner
+  m_EditorClassIdentifier: 
+  icon: {fileID: -5353825294692306793, guid: 9238b06b79c745844b5e96d4ed92705b, type: 3}
+  maxLevel: 2
+  baseStats:
+    name: Radar Scanner
+    description: Increases Area of attacks by 10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0
+      area: 0.1
+      speed: 0
+      cooldown: 0
+      magnet: 0
+      souls: 0
+  growth:
+  - name: Radar Scanner Level 2
+    description: Increases Area of attacks by 10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0
+      area: 0.1
+      speed: 0
+      cooldown: 0
+      magnet: 0
+      souls: 0

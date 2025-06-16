@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -440492152013007978}
   - component: {fileID: 8823129729775613634}
   - component: {fileID: 6176242821202358330}
+  - component: {fileID: -5503156666678954619}
   m_Layer: 0
   m_Name: EnemyRanged 1
   m_TagString: Enemy
@@ -186,3 +187,19 @@ MonoBehaviour:
   kaijuData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
   attackPoint: {fileID: 6798039674365265755}
   ProjectilePrefab: {fileID: 975588017728026953, guid: d8ae41abfae88704e99e19cf59d5b552, type: 3}
+--- !u!114 &-5503156666678954619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700512497031387890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e9e1f68fde2b149b51adc5487dbdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Soul
+    itemPrefab: {fileID: 4231670219362470641, guid: 211f10fa61b57614ab2c7033b86a4916, type: 3}
+    dropRate: 100

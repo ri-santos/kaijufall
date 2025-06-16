@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
     //private InputManager inputActions;
     //private InputAction movement;
 
+    public const float DEFAULT_MOVESPEED = 5f;
+
     Rigidbody2D rb;
     private PlayerManager player;
 
@@ -101,8 +103,8 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        rb.linearVelocity = new Vector2(moveDir.x * player.Stats.moveSpeed, moveDir.y * player.Stats.moveSpeed);
-        //rb.linearVelocity = moveDir * DEFAULT_MOVESPEED * player.Stats.moveSpeed;
+        //rb.linearVelocity = new Vector2(moveDir.x * player.Stats.moveSpeed, moveDir.y * player.Stats.moveSpeed);
+        rb.linearVelocity = moveDir * DEFAULT_MOVESPEED * player.Stats.moveSpeed;
     }
 
 

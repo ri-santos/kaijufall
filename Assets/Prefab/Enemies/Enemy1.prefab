@@ -168,6 +168,9 @@ MonoBehaviour:
   currentDamage: 0
   reward: 0
   despawnDistance: 20
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6
 --- !u!114 &-5184920448261383338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +186,4 @@ MonoBehaviour:
   drops:
   - name: Soul
     itemPrefab: {fileID: 4231670219362470641, guid: 211f10fa61b57614ab2c7033b86a4916, type: 3}
-    dropRate: 80
+    dropRate: 100

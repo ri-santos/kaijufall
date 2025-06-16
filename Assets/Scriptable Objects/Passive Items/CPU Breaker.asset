@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb006ad3c7252d4ab9d363c0c179aaa, type: 3}
+  m_Name: CPU Breaker
+  m_EditorClassIdentifier: 
+  icon: {fileID: -5204428116780873495, guid: 2a6190e0292e1954fb0278e418a00f17, type: 3}
+  maxLevel: 2
+  baseStats:
+    name: CPU Breaker
+    description: Decreases Weapon cooldown by 10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0
+      cooldown: 0.1
+      magnet: 0
+      souls: 0
+  growth:
+  - name: CPU Breaker
+    description: Decreases Weapon cooldown by 10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0
+      cooldown: 0.1
+      magnet: 0
+      souls: 0
