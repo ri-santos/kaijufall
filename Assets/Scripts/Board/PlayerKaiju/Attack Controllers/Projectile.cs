@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
             collision.GetComponent<BigKaiju>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("BoardEnemy"))
         {
             collision.GetComponent<BoardEnemyStats>().TakeDamage(damage);
             Destroy(gameObject);

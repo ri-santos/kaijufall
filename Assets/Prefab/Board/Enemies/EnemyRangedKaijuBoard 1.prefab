@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6429165999461928127}
   - component: {fileID: 8496707801565645828}
   - component: {fileID: -8336621628088306932}
-  - component: {fileID: -5336708540869514923}
+  - component: {fileID: 7671818920923329730}
   m_Layer: 0
-  m_Name: EnemyKaijuBoard
+  m_Name: EnemyRangedKaijuBoard 1
   m_TagString: BoardEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: -1293849753
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6257046027232108077, guid: 1395120f1a66dc6418285f7a15a916f0, type: 3}
+  m_Sprite: {fileID: 2072640275240368233, guid: e3ca0a94298312c48a83b50bef4fcbc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46875, y: 0.53125}
+    oldSize: {x: 0.53125, y: 0.59375}
     newSize: {x: 0.46875, y: 0.53125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb08c4428cdec95488f84d61c4cebbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
+  enemyData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
 --- !u!114 &-8336621628088306932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,12 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab1cf2f19cb3134599c81669d2f4a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
+  enemyData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
   reward: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
---- !u!114 &-5336708540869514923
+--- !u!114 &7671818920923329730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3700512497031387890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae8593accb275746b4cf44acabf91e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 391391c459bb2644997bca0ed4f8c35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: 61e82498d57a8c9479c9d50b132dbfbd, type: 2}
+  kaijuData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
   attackPoint: {fileID: 0}
+  ProjectilePrefab: {fileID: 975588017728026953, guid: d8ae41abfae88704e99e19cf59d5b552, type: 3}
