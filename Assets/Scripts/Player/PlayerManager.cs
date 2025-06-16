@@ -280,7 +280,7 @@ public class PlayerManager : MonoBehaviour
         GameManager.instance.currentHealthDisplay.text = "Health: " + Mathf.RoundToInt(CurrentHealth);
         GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + CurrentRecovery;
         GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed: " + CurrentMoveSpeed;
-        GameManager.instance.currentMightDisplay.text = "Might: " + CurrentMight;
+        GameManager.instance.currentMightDisplay.text = "Might: " + Might;
         GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + CurrentProjectileSpeed;
         GameManager.instance.currentSoulsDisplay.text = "Souls: " + CurrentSouls;
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + CurrentMagnet;
