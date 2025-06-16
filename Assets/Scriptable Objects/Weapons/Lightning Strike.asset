@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lightning Strike
   m_EditorClassIdentifier: 
   icon: {fileID: -3892224557681406644, guid: 4572808a4e7ac6c4086299a3d80c757a, type: 3}
-  maxLevel: 2
+  maxLevel: 3
   behaviour: LightningRing
   baseStats:
     name: Lightning Strike
@@ -52,6 +52,28 @@ MonoBehaviour:
       height: 0
     lifespan: 0
     damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 1
+    piercing: 0
+    maxInstances: 0
+  - name: Lightning Strike Level 3
+    description: Additional strike and 3 damage
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 3
     damageVariance: 0
     area: 0
     speed: 0

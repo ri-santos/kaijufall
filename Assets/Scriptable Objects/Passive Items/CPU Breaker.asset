@@ -24,11 +24,11 @@ MonoBehaviour:
       might: 0
       area: 0
       speed: 0
-      cooldown: 0.1
+      cooldown: -0.1
       magnet: 0
       souls: 0
   growth:
-  - name: CPU Breaker
+  - name: CPU Breaker Level 2
     description: Decreases Weapon cooldown by 10%
     boosts:
       maxHealth: 0
@@ -37,6 +37,6 @@ MonoBehaviour:
       might: 0
       area: 0
       speed: 0
-      cooldown: 0.1
+      cooldown: -0.15
       magnet: 0
       souls: 0

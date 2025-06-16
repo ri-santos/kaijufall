@@ -84,7 +84,7 @@ MonoBehaviour:
     piercing: 0
     maxInstances: 0
   - name: Beam Level 4
-    description: Fires 1 more Projectile
+    description: Fires 2 more Projectile
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
     cooldown: 0
     projectileInterval: 0
     knockback: 0
-    number: 1
+    number: 2
     piercing: 0
     maxInstances: 0
   randomGrowth: []

@@ -95,7 +95,7 @@ MonoBehaviour:
       width: 0
       height: 0
     lifespan: 0
-    damage: 2
+    damage: 3
     damageVariance: 0
     area: 0
     speed: 0

@@ -53,11 +53,11 @@ MonoBehaviour:
       magnet: 0
       souls: 0
   - name: Booster Level MAX
-    description: Boost movement speed by an extra 10%
+    description: Boost movement speed by an extra 20%
     boosts:
       maxHealth: 0
       recovery: 0
-      moveSpeed: 0.1
+      moveSpeed: 0.2
       might: 0
       area: 0
       speed: 0

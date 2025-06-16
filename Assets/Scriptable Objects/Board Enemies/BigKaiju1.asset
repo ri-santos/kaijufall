@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numEnemies: 8
   enemyPrefab: {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
-  health: 1000
+  health: 700
   attackCooldown: 3
   timeBetweenProjectiles: 0.3
   damage: 20

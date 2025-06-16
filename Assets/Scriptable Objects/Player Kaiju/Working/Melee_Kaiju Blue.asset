@@ -20,4 +20,4 @@ MonoBehaviour:
   attackCooldown: 1.5
   attackRange: 1
   blockStrength: 2
-  cost: 1
+  cost: 60
