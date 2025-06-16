@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1482216451476195916, guid: deb65014e3a36554a81260e1e0058961, type: 3}
   kaijuName: 
-  speed: 3
+  speed: 4
   health: 70
   damage: 6
   attackCooldown: 1.5

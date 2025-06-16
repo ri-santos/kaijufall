@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac132b02032d70409538592bb98d15f, type: 3}
   m_Name: BoardEnemy 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3700512497031387890, guid: fe54a995c713cd74fb28a24a88dec3d5, type: 3}
+  prefab: {fileID: 3700512497031387890, guid: da7c8adc824b407448a12a0abb9c4b5a, type: 3}
   enemyName: 
-  speed: 3
+  speed: 4
   health: 70
-  damage: 7
-  attackCooldown: 1
-  attackRange: 2
+  damage: 5
+  attackCooldown: 2
+  attackRange: 1
   reward: 0
