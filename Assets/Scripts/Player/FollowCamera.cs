@@ -34,6 +34,6 @@ public class FollowCamera : MonoBehaviour
         Debug.Log("Changing to player camera");
         cameraTarget = playerTarget;
         offset = new Vector3(0, 0, -10);
-        cameraController.orthographicSize = 5f; // Adjust the orthographic size as needed
+        cameraController.orthographicSize = 8f; // Adjust the orthographic size as needed
     }
 }

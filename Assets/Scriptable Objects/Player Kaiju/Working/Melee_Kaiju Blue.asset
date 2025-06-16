@@ -15,9 +15,9 @@ MonoBehaviour:
   prefab: {fileID: 1482216451476195916, guid: deb65014e3a36554a81260e1e0058961, type: 3}
   kaijuName: 
   speed: 4
-  health: 70
+  health: 120
   damage: 6
   attackCooldown: 1.5
   attackRange: 1
   blockStrength: 2
-  cost: 60
+  cost: 50
