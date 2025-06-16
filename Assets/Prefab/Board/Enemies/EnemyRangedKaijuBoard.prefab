@@ -180,5 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kaijuData: {fileID: 11400000, guid: fb3b6f7717319e14badce073d6aa29d2, type: 2}
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 6798039674365265755}
   ProjectilePrefab: {fileID: 975588017728026953, guid: 2058e2edd9428e0419199d301fee5c79, type: 3}

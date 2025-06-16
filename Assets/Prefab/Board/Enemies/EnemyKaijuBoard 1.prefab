@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb08c4428cdec95488f84d61c4cebbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: a4a7e041dbbba3b48acf86009a2dcdba, type: 2}
+  enemyData: {fileID: 11400000, guid: 5479b5d93d64ba54ab9816a503cbf653, type: 2}
 --- !u!114 &-8336621628088306932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab1cf2f19cb3134599c81669d2f4a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: a4a7e041dbbba3b48acf86009a2dcdba, type: 2}
+  enemyData: {fileID: 11400000, guid: 5479b5d93d64ba54ab9816a503cbf653, type: 2}
   reward: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae8593accb275746b4cf44acabf91e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: a4a7e041dbbba3b48acf86009a2dcdba, type: 2}
+  kaijuData: {fileID: 11400000, guid: 5479b5d93d64ba54ab9816a503cbf653, type: 2}
   attackPoint: {fileID: 6798039674365265755}

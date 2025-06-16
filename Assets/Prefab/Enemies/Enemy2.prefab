@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f593223f2e3c1d4e8e16573fe712595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: a4a7e041dbbba3b48acf86009a2dcdba, type: 2}
 --- !u!114 &-6654969842183760880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +168,9 @@ MonoBehaviour:
   currentDamage: 0
   reward: 0
   despawnDistance: 20
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6
 --- !u!114 &-5184920448261383338
 MonoBehaviour:
   m_ObjectHideFlags: 0

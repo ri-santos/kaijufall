@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb08c4428cdec95488f84d61c4cebbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
+  enemyData: {fileID: 11400000, guid: a29df8e6d8a13294e86203ec51261015, type: 2}
 --- !u!114 &-8336621628088306932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab1cf2f19cb3134599c81669d2f4a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
+  enemyData: {fileID: 11400000, guid: a29df8e6d8a13294e86203ec51261015, type: 2}
   reward: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
@@ -179,6 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391391c459bb2644997bca0ed4f8c35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kaijuData: {fileID: 11400000, guid: 5ff5f24c92933cd42b4937c4fe267e9d, type: 2}
-  attackPoint: {fileID: 0}
+  kaijuData: {fileID: 11400000, guid: a29df8e6d8a13294e86203ec51261015, type: 2}
+  attackPoint: {fileID: 6798039674365265755}
   ProjectilePrefab: {fileID: 975588017728026953, guid: d8ae41abfae88704e99e19cf59d5b552, type: 3}
