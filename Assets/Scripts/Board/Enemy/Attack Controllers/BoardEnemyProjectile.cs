@@ -2,31 +2,31 @@ using UnityEngine;
 
 public class BoardEnemyProjectile : MonoBehaviour
 {
-    private float damage;
-    private Vector2 direction;
-    private float speed = 10f;
-    private float range;
-    private float distanceTraveled = 0f;
+    protected float damage;
+    protected Vector2 direction;
+    protected float speed = 10f;
+    protected float range;
+    protected float distanceTraveled = 0f;
 
-    [SerializeField] private TrailRenderer trail;
+    [SerializeField] protected TrailRenderer trail;
 
     Rigidbody2D rb;
     public EnemyScriptableObject kaijuData;
 
     [Header("Visuals")]
-    [SerializeField] private GameObject impactEffect;
-    [SerializeField] private GameObject prefab; // Reference to the projectile prefab
+    [SerializeField] protected GameObject impactEffect;
+    [SerializeField] protected GameObject prefab; // Reference to the projectile prefab
     public GameObject Prefab { get => prefab; private set => prefab = value; }
 
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         damage = kaijuData.Damage;
         range = kaijuData.AttackRange;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         rb.linearVelocity = direction * speed;
         distanceTraveled += speed * Time.deltaTime;

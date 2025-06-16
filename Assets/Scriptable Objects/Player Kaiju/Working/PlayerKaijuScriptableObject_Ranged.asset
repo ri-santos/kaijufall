@@ -16,7 +16,7 @@ MonoBehaviour:
   kaijuName: Red Dino
   speed: 1
   health: 20
-  damage: 3
+  damage: 7
   attackCooldown: 0.5
   attackRange: 4
   blockStrength: 0

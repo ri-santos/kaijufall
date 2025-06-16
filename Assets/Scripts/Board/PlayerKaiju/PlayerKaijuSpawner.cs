@@ -77,5 +77,6 @@ public class PlayerKaijuSpawner : MonoBehaviour
             kaiju.GetComponent<PlayerKaijuMovement>().enabled = true;
             kaiju.GetComponent<PlayerKaijuAttackController>().enabled = true;
         }
+        kaijus.Clear();
     }
 }

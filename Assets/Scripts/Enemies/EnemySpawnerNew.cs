@@ -38,7 +38,7 @@ public class EnemySpawnerNew : MonoBehaviour
     [Header("Spawn Positions")]
     public List<Transform> relativeSpawnPoints;
 
-
+    private bool finalStateReached; // Flag to check if the final state has been reached
 
     Transform player;
 
@@ -49,22 +49,42 @@ public class EnemySpawnerNew : MonoBehaviour
     {
         player = FindAnyObjectByType<PlayerManager>().transform;
         CalculateWaveQuota();
+        finalStateReached = false;
+        GameManager.instance.onChangeToFinal += FinalState;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
+        if (!finalStateReached)
         {
-            StartCoroutine(BeginNextWave());
+            if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
+            {
+                StartCoroutine(BeginNextWave());
+            }
+
+            spawnTimer += Time.deltaTime;
+
+            if (spawnTimer >= waves[currentWaveCount].spawnInterval)
+            {
+                spawnTimer = 0f;
+                SpawnEnemies();
+            }
         }
-
-        spawnTimer += Time.deltaTime;
-
-        if (spawnTimer >= waves[currentWaveCount].spawnInterval) 
+        else
         {
-            spawnTimer = 0f;
-            SpawnEnemies();
+            if (waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
+            {
+                StartCoroutine(BeginNextWaveFinal());
+            }
+
+            spawnTimer += Time.deltaTime;
+
+            if (spawnTimer >= waves[currentWaveCount].spawnInterval/2)
+            {
+                spawnTimer = 0f;
+                SpawnEnemies();
+            }
         }
     }
 
@@ -80,8 +100,18 @@ public class EnemySpawnerNew : MonoBehaviour
         {
             isWaveActive = false;
             currentWaveCount++;
+            currentWaveCount %= 2;
             CalculateWaveQuota();
         }
+    }
+
+    IEnumerator BeginNextWaveFinal()
+    {
+        yield return new WaitForSeconds(waveInterval / 5);
+
+        currentWaveCount = 2; // Set to the final wave index
+        isWaveActive = true;
+        CalculateWaveQuota();
     }
 
     void CalculateWaveQuota()
@@ -132,5 +162,11 @@ public class EnemySpawnerNew : MonoBehaviour
         {
             maxEnemiesReached = false;
         }
+    }
+
+    private void FinalState()
+    {
+        finalStateReached = true;
+        maxEnemiesAllowed = 30; // Set a higher limit for the final state
     }
 }
