@@ -48,6 +48,7 @@ public class BigKaijuSmallProjectile : MonoBehaviour
         if (collision.CompareTag("PlayerKaiju"))
         {
             collision.GetComponent<PlayerKaijuStats>().TakeDamage(damage);
+            damage /= 2;
         }
         if (collision.CompareTag("Player"))
         {

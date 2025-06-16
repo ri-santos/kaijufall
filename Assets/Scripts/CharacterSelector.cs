@@ -27,7 +27,7 @@ public class CharacterSelector : MonoBehaviour
     
     public static CharacterData GetData()
     {
-        if(instance && instance.characterData)
+        if (instance && instance.characterData)
         {
             return instance.characterData;
         }

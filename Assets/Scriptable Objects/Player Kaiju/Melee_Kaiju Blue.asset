@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac132b02032d70409538592bb98d15f, type: 3}
-  m_Name: Enemy1
+  m_Script: {fileID: 11500000, guid: 0ebe05eb8171b9f45976484eddc92f76, type: 3}
+  m_Name: Melee_Kaiju Blue
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3700512497031387890, guid: 8d0e3d45f6e1cd84fa03978af54c6eee, type: 3}
-  enemyName: Calculo
+  prefab: {fileID: 1482216451476195916, guid: deb65014e3a36554a81260e1e0058961, type: 3}
+  kaijuName: 
   speed: 3
-  health: 20
-  damage: 10
-  attackCooldown: 0
-  attackRange: 0
-  reward: 0
+  health: 70
+  damage: 6
+  attackCooldown: 1.5
+  attackRange: 1
+  blockStrength: 2
+  cost: 1

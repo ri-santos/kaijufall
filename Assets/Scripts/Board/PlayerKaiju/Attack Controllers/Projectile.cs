@@ -2,32 +2,32 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private float damage;
-    private Vector2 direction;
-    private float speed = 10f;
-    private float range;
-    private float distanceTraveled = 0f;
-    private string targetTag;
+    protected float damage;
+    protected Vector2 direction;
+    protected float speed = 10f;
+    protected float range;
+    protected float distanceTraveled = 0f;
+    protected string targetTag;
 
-    [SerializeField] private TrailRenderer trail;
+    [SerializeField] protected TrailRenderer trail;
 
     Rigidbody2D rb;
     public PlayerKaijuScriptableObject kaijuData;
 
     [Header("Visuals")]
-    [SerializeField] private GameObject impactEffect;
-    [SerializeField] private GameObject prefab; // Reference to the projectile prefab
+    [SerializeField] protected GameObject impactEffect;
+    [SerializeField] protected GameObject prefab; // Reference to the projectile prefab
     public GameObject Prefab { get => prefab; private set => prefab = value; }
 
 
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         damage = kaijuData.Damage;
         range = kaijuData.AttackRange;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         rb.linearVelocity = direction * speed;
         distanceTraveled += speed * Time.deltaTime;
@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
         targetTag = tag;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BigKaiju") && targetTag == "BigKaiju")
         {
